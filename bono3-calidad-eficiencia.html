@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bono 3 — Checklist de Calidad y Eficiencia Energética</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#122036; --navy-deep:#0a1524; --steel:#2f4a66; --steel-light:#5c7a95;
+  --orange:#e2761f; --orange-bright:#f5a24f; --orange-pale:#fde8d2;
+  --bg:#f2f4f2; --paper:#ffffff; --line:#dfe4e3;
+  --text:#1b2430; --text-soft:#4c5866; --danger:#c23b2c; --ok:#2f7d4f;
+}
+*{box-sizing:border-box; margin:0; padding:0;}
+body{font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); line-height:1.65;}
+h1,h2,h3{font-weight:800; color:var(--navy);}
+.mono{font-family:'IBM Plex Mono',monospace;}
+.wrap{max-width:880px; margin:0 auto; padding:0 24px;}
+.cover{background:linear-gradient(160deg, var(--navy) 0%, var(--navy-deep) 100%); color:#fff; padding:56px 24px 48px; text-align:center;}
+.cover .kicker{color:var(--orange-bright); font-size:0.78rem; letter-spacing:0.16em; text-transform:uppercase; font-weight:700; margin-bottom:14px;}
+.cover h1{color:#fff; font-size:clamp(1.7rem,4.6vw,2.5rem); line-height:1.2; max-width:640px; margin:0 auto 14px;}
+.cover p{color:rgba(255,255,255,0.75); max-width:520px; margin:0 auto; font-size:1rem;}
+.badge-bono{display:inline-block; background:var(--orange); color:#241a08; font-weight:800; font-size:0.75rem; padding:5px 14px; border-radius:20px; margin-bottom:18px; letter-spacing:0.04em;}
+section.content{background:var(--paper); padding:8px 24px 10px;}
+.lesson{max-width:880px; margin:0 auto; padding:34px 0; border-bottom:1px solid var(--line);}
+.lesson:last-child{border-bottom:none;}
+.lesson h3{font-size:1.3rem; margin-bottom:14px;}
+.lesson p{color:var(--text-soft); margin-bottom:12px;}
+.lesson ul, .lesson ol{color:var(--text-soft); margin:0 0 12px 22px;}
+.lesson li{margin-bottom:6px;}
+.callout{border-radius:8px; padding:16px 18px; margin:16px 0; font-size:0.94rem;}
+.callout.tip{background:#eaf3ee; border-left:4px solid var(--ok); color:#1e5236;}
+.callout.warn{background:#fdeeea; border-left:4px solid var(--danger); color:#7a2318;}
+.callout .label{font-weight:800; text-transform:uppercase; font-size:0.72rem; letter-spacing:0.06em; display:block; margin-bottom:4px;}
+table{width:100%; border-collapse:collapse; margin:16px 0; font-size:0.88rem;}
+th{background:var(--navy); color:#fff; text-align:left; padding:10px 12px; font-size:0.78rem; text-transform:uppercase;}
+td{padding:10px 12px; border-bottom:1px solid var(--line); color:var(--text-soft);}
+tr:nth-child(even) td{background:#f8f9f8;}
+.checklist{list-style:none; margin:16px 0;}
+.checklist li{display:flex; gap:10px; align-items:flex-start; padding:8px 0; border-bottom:1px dashed var(--line); color:var(--text-soft); font-size:0.94rem;}
+.checklist li::before{content:"☐"; color:var(--orange); font-size:1.1rem; line-height:1;}
+.diagram{background:#eef2f6; border:1px solid var(--line); border-radius:8px; padding:18px; margin:18px 0; text-align:center;}
+.diagram svg{max-width:100%; height:auto;}
+.diagram .cap{font-size:0.8rem; color:var(--text-soft); margin-top:8px;}
+footer{background:var(--navy-deep); color:rgba(255,255,255,0.45); text-align:center; padding:30px 24px; font-size:0.8rem;}
+</style>
+</head>
+<body>
+
+<section class="cover">
+  <div class="wrap">
+    <span class="badge-bono">🎁 BONO 3</span>
+    <div class="kicker">Control de Calidad</div>
+    <h1>Checklist de Calidad y Eficiencia Energética</h1>
+    <p>La diferencia entre una instalación que "funciona" y una que funciona bien, dura años y no genera reclamos — en una lista que puedes imprimir y usar en cada servicio.</p>
+  </div>
+</section>
+
+<section class="content">
+  <div class="lesson">
+    <h3>1. Checklist de Calidad — Antes de Cerrar el Servicio</h3>
+    <p><strong>Unidad interna</strong></p>
+    <ul class="checklist">
+      <li>Nivelada (revisa con nivel, no a simple vista)</li>
+      <li>Firme en el soporte, sin holgura al mover suavemente</li>
+      <li>Salida de aire sin obstrucción a menos de 1 metro</li>
+      <li>Drenaje con pendiente adecuada verificado con agua</li>
+    </ul>
+    <p><strong>Unidad externa</strong></p>
+    <ul class="checklist">
+      <li>Nivelada y con amortiguación (goma/soportes antivibración)</li>
+      <li>Espacio libre mínimo de 15cm alrededor para circulación de aire</li>
+      <li>Protegida de sol directo excesivo cuando sea posible</li>
+      <li>Sin obstrucción que impida la salida de aire caliente</li>
+    </ul>
+    <p><strong>Tubería y aislamiento</strong></p>
+    <ul class="checklist">
+      <li>Aislamiento térmico completo, sin tramos expuestos de cobre</li>
+      <li>Sin dobleces cerrados que puedan restringir el flujo</li>
+      <li>Fijada cada 60-100cm para evitar vibración y desgaste</li>
+      <li>Sellado correcto donde la tubería atraviesa la pared</li>
+    </ul>
+    <p><strong>Sistema eléctrico</strong></p>
+    <ul class="checklist">
+      <li>Conexión a tierra verificada con multímetro</li>
+      <li>Breaker del amperaje correcto, dedicado al equipo</li>
+      <li>Conexiones bien apretadas — un cable flojo genera calentamiento y falla con el tiempo</li>
+    </ul>
+  </div>
+
+  <div class="lesson">
+    <h3>2. Prueba de Funcionamiento (mide, no asumas)</h3>
+    <table>
+      <tr><th>Medición</th><th>Valor esperado</th></tr>
+      <tr><td>Diferencial de temperatura (entrada vs. salida de aire)</td><td>8-12°C</td></tr>
+      <tr><td>Corriente eléctrica del compresor</td><td>Dentro del rango marcado en la etiqueta del equipo</td></tr>
+      <tr><td>Tiempo hasta alcanzar temperatura ajustada</td><td>Proporcional al tamaño del ambiente y BTU — si tarda mucho, revisa dimensionamiento</td></tr>
+      <tr><td>Ruido en operación normal</td><td>Sin golpeteos, silbidos ni vibración perceptible en la pared</td></tr>
+    </table>
+    <div class="callout tip"><span class="label">Por qué esto importa para tu negocio</span>Documentar estas mediciones (con foto del multímetro/termómetro) te protege ante cualquier reclamo futuro — puedes demostrar que el equipo salió funcionando correctamente el día de la entrega.</div>
+  </div>
+
+  <div class="lesson">
+    <h3>3. Eficiencia Energética — Lo que Debes Explicar al Cliente</h3>
+    <div class="diagram">
+      <svg viewBox="0 0 640 160" xmlns="http://www.w3.org/2000/svg">
+        <rect x="0" y="0" width="640" height="160" fill="#eef2f6"/>
+        <rect x="40" y="40" width="240" height="80" rx="6" fill="#5c7a95"/>
+        <text x="160" y="75" text-anchor="middle" fill="#fff" font-family="Inter" font-size="13" font-weight="700">Cada 1°C menos</text>
+        <text x="160" y="95" text-anchor="middle" fill="#fff" font-family="Inter" font-size="13" font-weight="700">= +6-8% de consumo</text>
+        <rect x="360" y="40" width="240" height="80" rx="6" fill="#2f7d4f"/>
+        <text x="480" y="75" text-anchor="middle" fill="#fff" font-family="Inter" font-size="13" font-weight="700">23-24°C es el punto</text>
+        <text x="480" y="95" text-anchor="middle" fill="#fff" font-family="Inter" font-size="13" font-weight="700">ideal de confort/ahorro</text>
+      </svg>
+      <p class="cap">Fig. 1 — Argumento simple y visual para reducir la factura del cliente sin sacrificar confort.</p>
+    </div>
+    <ul>
+      <li>Explica que ajustar el termostato 1-2°C más alto de lo habitual reduce notablemente el consumo sin afectar mucho el confort</li>
+      <li>Un equipo Inverter bien dimensionado consume menos que uno sobredimensionado trabajando por debajo de su capacidad real</li>
+      <li>El mantenimiento preventivo regular (filtro y serpentín limpios) puede significar hasta 15% menos consumo — es un argumento fuerte para vender el contrato de mantenimiento</li>
+      <li>Cortinas/persianas que bloqueen sol directo en las horas más calientes reducen la carga térmica real del ambiente</li>
+    </ul>
+  </div>
+
+  <div class="lesson">
+    <h3>4. Errores Comunes que Reducen la Eficiencia (y cómo evitarlos)</h3>
+    <table>
+      <tr><th>Error</th><th>Impacto</th><th>Cómo evitarlo</th></tr>
+      <tr><td>Equipo subdimensionado</td><td>Trabaja al máximo todo el tiempo, consume más y dura menos</td><td>Siempre calcula BTU real, no "a ojo"</td></tr>
+      <tr><td>Equipo sobredimensionado</td><td>Enfría rápido pero no deshumidifica bien, sensación de "frío húmedo"</td><td>Respeta la tabla de dimensionamiento del Módulo 2</td></tr>
+      <tr><td>Filtro sucio</td><td>Reduce flujo de aire, fuerza el compresor a trabajar más</td><td>Recomienda limpieza mensual al cliente</td></tr>
+      <tr><td>Fuga lenta de gas no detectada</td><td>El equipo trabaja más para compensar, consumo sube gradualmente</td><td>Revisión anual de presión de gas</td></tr>
+    </table>
+  </div>
+</section>
+
+<footer>Bono 3 — Checklist de Calidad y Eficiencia Energética · Material complementario del curso Instalador Split</footer>
+</body>
+</html>

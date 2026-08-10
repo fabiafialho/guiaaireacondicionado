@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bono 2 — Manual de Diagnóstico de Fallas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#122036; --navy-deep:#0a1524; --steel:#2f4a66; --steel-light:#5c7a95;
+  --orange:#e2761f; --orange-bright:#f5a24f; --orange-pale:#fde8d2;
+  --bg:#f2f4f2; --paper:#ffffff; --line:#dfe4e3;
+  --text:#1b2430; --text-soft:#4c5866; --danger:#c23b2c; --ok:#2f7d4f;
+}
+*{box-sizing:border-box; margin:0; padding:0;}
+body{font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); line-height:1.65;}
+h1,h2,h3{font-weight:800; color:var(--navy);}
+.mono{font-family:'IBM Plex Mono',monospace;}
+.wrap{max-width:880px; margin:0 auto; padding:0 24px;}
+.cover{background:linear-gradient(160deg, var(--navy) 0%, var(--navy-deep) 100%); color:#fff; padding:56px 24px 48px; text-align:center;}
+.cover .kicker{color:var(--orange-bright); font-size:0.78rem; letter-spacing:0.16em; text-transform:uppercase; font-weight:700; margin-bottom:14px;}
+.cover h1{color:#fff; font-size:clamp(1.7rem,4.6vw,2.5rem); line-height:1.2; max-width:640px; margin:0 auto 14px;}
+.cover p{color:rgba(255,255,255,0.75); max-width:520px; margin:0 auto; font-size:1rem;}
+.badge-bono{display:inline-block; background:var(--orange); color:#241a08; font-weight:800; font-size:0.75rem; padding:5px 14px; border-radius:20px; margin-bottom:18px; letter-spacing:0.04em;}
+section.content{background:var(--paper); padding:8px 24px 10px;}
+.lesson{max-width:880px; margin:0 auto; padding:34px 0; border-bottom:1px solid var(--line);}
+.lesson:last-child{border-bottom:none;}
+.lesson h3{font-size:1.3rem; margin-bottom:14px;}
+.lesson p{color:var(--text-soft); margin-bottom:12px;}
+.lesson ul, .lesson ol{color:var(--text-soft); margin:0 0 12px 22px;}
+.lesson li{margin-bottom:6px;}
+.callout{border-radius:8px; padding:16px 18px; margin:16px 0; font-size:0.94rem;}
+.callout.tip{background:#eaf3ee; border-left:4px solid var(--ok); color:#1e5236;}
+.callout.warn{background:#fdeeea; border-left:4px solid var(--danger); color:#7a2318;}
+.callout .label{font-weight:800; text-transform:uppercase; font-size:0.72rem; letter-spacing:0.06em; display:block; margin-bottom:4px;}
+table{width:100%; border-collapse:collapse; margin:16px 0; font-size:0.88rem;}
+th{background:var(--navy); color:#fff; text-align:left; padding:10px 12px; font-size:0.78rem; text-transform:uppercase;}
+td{padding:10px 12px; border-bottom:1px solid var(--line); color:var(--text-soft);}
+tr:nth-child(even) td{background:#f8f9f8;}
+.diagram{background:#eef2f6; border:1px solid var(--line); border-radius:8px; padding:18px; margin:18px 0; text-align:center;}
+.diagram svg{max-width:100%; height:auto;}
+.diagram .cap{font-size:0.8rem; color:var(--text-soft); margin-top:8px;}
+footer{background:var(--navy-deep); color:rgba(255,255,255,0.45); text-align:center; padding:30px 24px; font-size:0.8rem;}
+</style>
+</head>
+<body>
+
+<section class="cover">
+  <div class="wrap">
+    <span class="badge-bono">🎁 BONO 2</span>
+    <div class="kicker">Diagnóstico Profesional</div>
+    <h1>Manual de Diagnóstico de Fallas</h1>
+    <p>El árbol de decisión y las tablas de referencia que usan los técnicos experimentados para no adivinar — para saber exactamente qué medir y qué significa cada resultado.</p>
+  </div>
+</section>
+
+<section class="content">
+  <div class="lesson">
+    <h3>1. Árbol de Decisión: "El Equipo No Enfría"</h3>
+    <p>Es el llamado más común. Sigue este orden — cada paso descarta causas antes de pasar al siguiente, evitando que abras el sistema de gas sin necesidad.</p>
+    <div class="diagram">
+      <svg viewBox="0 0 700 380" xmlns="http://www.w3.org/2000/svg">
+        <defs><marker id="ar" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#2f4a66"/></marker></defs>
+        <rect x="270" y="10" width="160" height="40" rx="6" fill="#122036"/>
+        <text x="350" y="34" text-anchor="middle" fill="#fff" font-family="Inter" font-size="11" font-weight="700">¿El filtro está limpio?</text>
+        <path d="M350,50 L350,80" stroke="#2f4a66" stroke-width="2" marker-end="url(#ar)"/>
+        <rect x="180" y="80" width="150" height="40" rx="6" fill="#c23b2c"/>
+        <text x="255" y="104" text-anchor="middle" fill="#fff" font-family="Inter" font-size="10" font-weight="700">NO → Limpia y prueba</text>
+        <rect x="370" y="80" width="150" height="40" rx="6" fill="#5c7a95"/>
+        <text x="445" y="104" text-anchor="middle" fill="#fff" font-family="Inter" font-size="10" font-weight="700">SÍ → Continúa</text>
+        <path d="M255,120 L255,140" stroke="#2f4a66" stroke-width="1.5" stroke-dasharray="3,3"/>
+        <path d="M445,120 L350,150" stroke="#2f4a66" stroke-width="2" marker-end="url(#ar)"/>
+        <rect x="270" y="150" width="160" height="40" rx="6" fill="#122036"/>
+        <text x="350" y="174" text-anchor="middle" fill="#fff" font-family="Inter" font-size="11" font-weight="700">¿Ventilador externo gira?</text>
+        <path d="M350,190 L200,220" stroke="#2f4a66" stroke-width="2" marker-end="url(#ar)"/>
+        <path d="M350,190 L500,220" stroke="#2f4a66" stroke-width="2" marker-end="url(#ar)"/>
+        <rect x="120" y="220" width="160" height="44" rx="6" fill="#c23b2c"/>
+        <text x="200" y="238" text-anchor="middle" fill="#fff" font-family="Inter" font-size="10" font-weight="700">NO → Revisa capacitor</text>
+        <text x="200" y="252" text-anchor="middle" fill="#fff" font-family="Inter" font-size="10" font-weight="700">y motor del ventilador</text>
+        <rect x="420" y="220" width="160" height="30" rx="6" fill="#5c7a95"/>
+        <text x="500" y="240" text-anchor="middle" fill="#fff" font-family="Inter" font-size="10" font-weight="700">SÍ → Conecta manifold</text>
+        <path d="M500,250 L500,280" stroke="#2f4a66" stroke-width="2" marker-end="url(#ar)"/>
+        <rect x="410" y="280" width="180" height="60" rx="6" fill="#122036"/>
+        <text x="500" y="300" text-anchor="middle" fill="#fff" font-family="Inter" font-size="10" font-weight="700">Lee presiones alta/baja</text>
+        <text x="500" y="316" text-anchor="middle" fill="#fff" font-family="Inter" font-size="10" font-weight="700">→ compara con tabla</text>
+        <text x="500" y="332" text-anchor="middle" fill="#fff" font-family="Inter" font-size="10" font-weight="700">de la sección 2</text>
+      </svg>
+      <p class="cap">Fig. 1 — Diagnóstico por descarte: filtro → ventilador externo → lectura de presiones. El 70% de los llamados de "no enfría" se resuelven en los dos primeros pasos, sin necesidad de tocar el gas.</p>
+    </div>
+  </div>
+
+  <div class="lesson">
+    <h3>2. Tabla de Presiones — La Referencia Más Usada en el Oficio</h3>
+    <p>Con el manifold conectado y el equipo funcionando, compara la combinación de presión alta y baja con esta tabla clásica de diagnóstico:</p>
+    <table>
+      <tr><th>Presión baja</th><th>Presión alta</th><th>Diagnóstico probable</th></tr>
+      <tr><td>Baja de lo normal</td><td>Baja de lo normal</td><td>Falta de gas (carga insuficiente) — busca la fuga antes de recargar</td></tr>
+      <tr><td>Alta de lo normal</td><td>Alta de lo normal</td><td>Sobrecarga de gas o condensador sucio/sin flujo de aire</td></tr>
+      <tr><td>Baja de lo normal</td><td>Alta de lo normal</td><td>Restricción en el sistema (filtro deshidratador tapado, válvula obstruida)</td></tr>
+      <tr><td>Normal</td><td>Baja de lo normal</td><td>Compresor con baja eficiencia (válvulas internas desgastadas)</td></tr>
+      <tr><td>Alta de lo normal</td><td>Normal o baja</td><td>Presencia de aire/no-condensables en el sistema — indica vacío mal hecho en la instalación</td></tr>
+    </table>
+    <div class="callout tip"><span class="label">Cómo usar esta tabla en campo</span>Antes de diagnosticar, siempre compara con la presión de trabajo esperada para el gas y la temperatura ambiente del día — un mismo número puede ser normal en un día de 35°C y anormal en uno de 22°C. Lleva contigo la tabla presión-temperatura de saturación del gas que uses (R-410A o R-32) para hacer la comparación correcta.</div>
+  </div>
+
+  <div class="lesson">
+    <h3>3. Prueba de Capacitor (falla eléctrica más común)</h3>
+    <ol>
+      <li>Apaga el breaker y descarga el capacitor con una resistencia antes de tocarlo (puede almacenar carga incluso apagado)</li>
+      <li>Desconecta el capacitor del circuito</li>
+      <li>Mide capacitancia con el multímetro en modo capacitancia (µF)</li>
+      <li>Compara con el valor impreso en la etiqueta del capacitor — una diferencia mayor al 10% indica que está dañado y debe reemplazarse</li>
+    </ol>
+    <div class="callout warn"><span class="label">Seguridad</span>Nunca toques las terminales de un capacitor sin descargarlo primero — incluso desconectado de la red, puede retener una carga eléctrica peligrosa por horas.</div>
+  </div>
+
+  <div class="lesson">
+    <h3>4. Prueba de Devanados del Compresor</h3>
+    <p>Cuando sospechas de compresor dañado (no arranca, zumba pero no gira, dispara el breaker):</p>
+    <ol>
+      <li>Con el equipo desconectado, identifica los 3 terminales del compresor: Común (C), Marcha (R/Run) y Arranque (S/Start)</li>
+      <li>Mide resistencia entre cada par de terminales con el multímetro en modo ohms</li>
+      <li>Los tres valores deben formar una relación coherente: C-S = C-R + R-S (aproximadamente)</li>
+      <li>Resistencia infinita (circuito abierto) en cualquier par indica devanado quemado — compresor a reemplazar</li>
+      <li>Resistencia muy baja o cortocircuito a la carcasa (mide entre cualquier terminal y el cuerpo metálico del compresor) indica compresor en corto — también debe reemplazarse</li>
+    </ol>
+  </div>
+
+  <div class="lesson">
+    <h3>5. Cuándo Decir "No Tiene Reparación Económica"</h3>
+    <p>Parte de ser profesional es saber cuándo NO conviene reparar. Usa esta regla simple con el cliente:</p>
+    <div class="callout tip"><span class="label">Regla de los dos tercios</span>Si el costo estimado de la reparación (pieza + mano de obra) supera dos tercios del valor de un equipo nuevo equivalente, recomienda al cliente considerar el cambio — esto genera confianza a largo plazo, aunque pierdas esa venta puntual de reparación.</div>
+  </div>
+</section>
+
+<footer>Bono 2 — Manual de Diagnóstico de Fallas · Material complementario del curso Instalador Split</footer>
+</body>
+</html>

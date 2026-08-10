@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Instalador de Aire Acondicionado Split — De Cero a Profesional</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#122036; --navy-deep:#0a1524; --steel:#2f4a66; --steel-light:#5c7a95;
+  --orange:#e2761f; --orange-bright:#f5a24f; --orange-pale:#fde8d2;
+  --bg:#f2f4f2; --paper:#ffffff; --line:#dfe4e3;
+  --text:#1b2430; --text-soft:#4c5866;
+  --danger:#c23b2c; --ok:#2f7d4f;
+}
+*{box-sizing:border-box; margin:0; padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); line-height:1.65;}
+h1,h2,h3,h4{font-weight:800; color:var(--navy);}
+code, .mono{font-family:'IBM Plex Mono',monospace;}
+a{color:var(--orange); }
+.wrap{max-width:880px; margin:0 auto; padding:0 24px;}
+
+.topnav{background:var(--navy-deep); position:sticky; top:0; z-index:50; border-bottom:2px solid var(--orange);}
+.topnav-inner{max-width:880px; margin:0 auto; padding:14px 24px; display:flex; align-items:center; gap:22px; overflow-x:auto;}
+.topnav .brand{color:#fff; font-weight:800; font-size:15px; white-space:nowrap;}
+.topnav a{color:rgba(255,255,255,0.7); text-decoration:none; font-size:13px; font-weight:600; white-space:nowrap;}
+.topnav a:hover{color:var(--orange-bright);}
+
+.cover{background:linear-gradient(160deg, var(--navy) 0%, var(--navy-deep) 100%); color:#fff; padding:70px 24px 60px; text-align:center;}
+.cover .kicker{color:var(--orange-bright); font-size:0.8rem; letter-spacing:0.18em; text-transform:uppercase; font-weight:700; margin-bottom:18px;}
+.cover h1{color:#fff; font-size:clamp(1.9rem,5vw,3rem); line-height:1.15; max-width:680px; margin:0 auto 16px;}
+.cover p{color:rgba(255,255,255,0.75); max-width:520px; margin:0 auto 28px; font-size:1.05rem;}
+.cover .badges{display:flex; gap:14px; justify-content:center; flex-wrap:wrap; font-size:0.85rem; color:rgba(255,255,255,0.6);}
+.cover .badges span{border:1px solid rgba(245,162,79,0.4); padding:6px 14px; border-radius:20px;}
+
+.module-head{background:var(--navy); color:#fff; padding:46px 24px; margin-top:36px;}
+.module-head .num{color:var(--orange-bright); font-family:'IBM Plex Mono',monospace; font-size:0.9rem; letter-spacing:0.1em; margin-bottom:8px;}
+.module-head h2{color:#fff; font-size:1.9rem;}
+.module-head p{color:rgba(255,255,255,0.7); margin-top:8px; max-width:600px;}
+
+section.content{background:var(--paper); padding:8px 24px 10px;}
+
+.lesson{max-width:880px; margin:0 auto; padding:34px 0; border-bottom:1px solid var(--line);}
+.lesson:last-child{border-bottom:none;}
+.lesson h3{font-size:1.35rem; margin-bottom:14px; display:flex; align-items:center; gap:10px;}
+.lesson h3 .tag{background:var(--orange-pale); color:var(--orange); font-family:'IBM Plex Mono',monospace; font-size:0.7rem; padding:3px 9px; border-radius:4px; font-weight:600;}
+.lesson p{color:var(--text-soft); margin-bottom:12px;}
+.lesson ul, .lesson ol{color:var(--text-soft); margin:0 0 12px 22px;}
+.lesson li{margin-bottom:6px;}
+
+.callout{border-radius:8px; padding:16px 18px; margin:16px 0; font-size:0.94rem;}
+.callout.tip{background:#eaf3ee; border-left:4px solid var(--ok); color:#1e5236;}
+.callout.warn{background:#fdeeea; border-left:4px solid var(--danger); color:#7a2318;}
+.callout .label{font-weight:800; text-transform:uppercase; font-size:0.72rem; letter-spacing:0.06em; display:block; margin-bottom:4px;}
+
+table{width:100%; border-collapse:collapse; margin:16px 0; font-size:0.9rem;}
+th{background:var(--navy); color:#fff; text-align:left; padding:10px 12px; font-size:0.8rem; text-transform:uppercase; letter-spacing:0.03em;}
+td{padding:10px 12px; border-bottom:1px solid var(--line); color:var(--text-soft);}
+tr:nth-child(even) td{background:#f8f9f8;}
+
+.formula{background:var(--navy-deep); color:var(--orange-bright); font-family:'IBM Plex Mono',monospace; padding:20px 22px; border-radius:8px; margin:18px 0; font-size:1.05rem; text-align:center; overflow-x:auto;}
+.formula small{display:block; color:rgba(255,255,255,0.55); font-family:'Inter',sans-serif; font-size:0.78rem; margin-top:8px;}
+
+.diagram{background:#eef2f6; border:1px solid var(--line); border-radius:8px; padding:18px; margin:18px 0; text-align:center;}
+.diagram svg{max-width:100%; height:auto;}
+.diagram .cap{font-size:0.8rem; color:var(--text-soft); margin-top:8px;}
+
+.checklist{list-style:none; margin:16px 0;}
+.checklist li{display:flex; gap:10px; align-items:flex-start; padding:8px 0; border-bottom:1px dashed var(--line); color:var(--text-soft); font-size:0.94rem;}
+.checklist li::before{content:"☐"; color:var(--orange); font-size:1.1rem; line-height:1;}
+
+.tool-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:12px; margin:16px 0;}
+@media(min-width:600px){.tool-grid{grid-template-columns:repeat(3,1fr);}}
+.tool-card{background:#f8f9f8; border:1px solid var(--line); border-radius:8px; padding:14px; text-align:center;}
+.tool-card .ic{font-size:1.6rem; margin-bottom:6px;}
+.tool-card span{font-size:0.82rem; color:var(--text-soft); font-weight:600;}
+
+.toc-sec{background:var(--paper); padding:40px 24px;}
+.toc-grid{display:grid; gap:10px; max-width:700px; margin:0 auto;}
+.toc-item{display:flex; gap:14px; align-items:center; padding:14px 16px; background:#f8f9f8; border-radius:8px; border-left:4px solid var(--orange); text-decoration:none;}
+.toc-item .n{font-family:'IBM Plex Mono',monospace; color:var(--orange); font-weight:700; font-size:1.1rem;}
+.toc-item div h4{font-size:0.98rem; color:var(--navy);}
+.toc-item div p{font-size:0.8rem; color:var(--text-soft); margin:0;}
+
+footer{background:var(--navy-deep); color:rgba(255,255,255,0.45); text-align:center; padding:36px 24px; font-size:0.8rem;}
+</style>
+</head>
+<body>
+
+<div class="topnav">
+  <div class="topnav-inner">
+    <span class="brand">🔧 Instalador Split</span>
+    <a href="#modulo1">Módulo 1</a>
+    <a href="#modulo2">Módulo 2</a>
+    <a href="#modulo3">Módulo 3</a>
+    <a href="#modulo4">Módulo 4 · Negocio</a>
+  </div>
+</div>
+
+<section class="cover">
+  <div class="kicker">Curso Técnico Completo · Formato E-book</div>
+  <h1>Instalador de Aire Acondicionado Split: De Cero a Profesional</h1>
+  <p>La guía paso a paso para instalar, mantener y cobrar correctamente por el tipo de aire acondicionado más instalado en los hogares de Latinoamérica — el split de pared (hi-wall).</p>
+  <div class="badges">
+    <span>4 Módulos</span>
+    <span>Diagramas técnicos</span>
+    <span>Checklists listos</span>
+    <span>Fórmulas de precio</span>
+  </div>
+</section>
+
+<section class="toc-sec">
+  <div class="callout warn" style="max-width:700px; margin:0 auto 28px;">
+    <span class="label">Antes de empezar</span>
+    Este material te da la base teórica, el vocabulario técnico y el paso a paso completo del oficio — es tu punto de partida, no un sustituto de la práctica supervisada. Instalar aire acondicionado involucra electricidad, gas a presión y trabajo en altura: practica primero con un técnico experimentado antes de atender clientes solo, y consulta si tu país exige alguna licencia o certificación para trabajar con gases refrigerantes.
+  </div>
+  <div class="toc-grid">
+    <a class="toc-item" href="#modulo1"><span class="n">01</span><div><h4>Fundamentos de la Refrigeración</h4><p>Ciclo, componentes, herramientas y seguridad</p></div></a>
+    <a class="toc-item" href="#modulo2"><span class="n">02</span><div><h4>Instalación del Split</h4><p>Planeación, montaje, tubería, eléctrico y vacío</p></div></a>
+    <a class="toc-item" href="#modulo3"><span class="n">03</span><div><h4>Mantenimiento Preventivo y Correctivo</h4><p>Checklists, limpieza y diagnóstico de fallas</p></div></a>
+    <a class="toc-item" href="#modulo4"><span class="n">04</span><div><h4>Emprendimiento y Gestión</h4><p>Formalización, precios, ventas y marketing</p></div></a>
+  </div>
+</section>
+
+<!-- ===================== MÓDULO 1 ===================== -->
+<div id="modulo1"></div>
+<div class="module-head">
+  <div class="wrap">
+    <div class="num">MÓDULO 01</div>
+    <h2>Fundamentos de la Refrigeración</h2>
+    <p>Antes de instalar cualquier cosa, necesitas entender por qué funciona el sistema. Quien entiende el ciclo diagnostica cualquier problema; quien solo memoriza pasos se traba ante la primera falla diferente.</p>
+  </div>
+</div>
+<section class="content">
+  <div class="lesson">
+    <h3><span class="tag">1.1</span> El Ciclo de Refrigeración</h3>
+    <p>Todo aire acondicionado — split, ventana, cassette — funciona con el mismo principio físico: retirar calor de dentro del ambiente y expulsarlo afuera, usando un fluido refrigerante que cambia de estado (líquido/gas) bajo presión.</p>
+    <div class="diagram">
+      <svg viewBox="0 0 640 260" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#2f4a66"/></marker>
+        </defs>
+        <rect x="30" y="90" width="120" height="70" rx="6" fill="#e2761f"/>
+        <text x="90" y="130" text-anchor="middle" fill="#fff" font-family="Inter" font-size="13" font-weight="700">COMPRESOR</text>
+        <rect x="220" y="30" width="140" height="60" rx="6" fill="#c23b2c"/>
+        <text x="290" y="65" text-anchor="middle" fill="#fff" font-family="Inter" font-size="13" font-weight="700">CONDENSADOR</text>
+        <text x="290" y="20" text-anchor="middle" fill="#7a2318" font-family="Inter" font-size="11">libera calor (unidad externa)</text>
+        <rect x="460" y="90" width="120" height="70" rx="6" fill="#5c7a95"/>
+        <text x="520" y="130" text-anchor="middle" fill="#fff" font-family="Inter" font-size="12" font-weight="700">VÁLVULA DE</text>
+        <text x="520" y="146" text-anchor="middle" fill="#fff" font-family="Inter" font-size="12" font-weight="700">EXPANSIÓN</text>
+        <rect x="220" y="190" width="140" height="60" rx="6" fill="#2f7d4f"/>
+        <text x="290" y="225" text-anchor="middle" fill="#fff" font-family="Inter" font-size="13" font-weight="700">EVAPORADOR</text>
+        <text x="290" y="270" text-anchor="middle" fill="#1e5236" font-family="Inter" font-size="11">absorbe calor (unidad interna)</text>
+        <path d="M150,110 L220,70" stroke="#2f4a66" stroke-width="2.5" fill="none" marker-end="url(#arrow)"/>
+        <path d="M360,65 L460,105" stroke="#2f4a66" stroke-width="2.5" fill="none" marker-end="url(#arrow)"/>
+        <path d="M500,160 L340,205" stroke="#2f4a66" stroke-width="2.5" fill="none" marker-end="url(#arrow)"/>
+        <path d="M220,215 L150,145" stroke="#2f4a66" stroke-width="2.5" fill="none" marker-end="url(#arrow)"/>
+      </svg>
+      <p class="cap">Fig. 1 — Ciclo cerrado: el compresor presuriza el gas, el condensador libera calor al ambiente externo, la válvula de expansión reduce la presión y el evaporador absorbe calor del ambiente interno.</p>
+    </div>
+    <ul>
+      <li><strong>Compresor:</strong> el "corazón" del sistema, está en la unidad externa, presuriza el gas refrigerante</li>
+      <li><strong>Condensador:</strong> serpentín de la unidad externa, donde el gas caliente libera calor al aire externo y se convierte en líquido</li>
+      <li><strong>Válvula de expansión / capilar:</strong> reduce drásticamente la presión del líquido antes de entrar al evaporador</li>
+      <li><strong>Evaporador:</strong> serpentín de la unidad interna, donde el líquido absorbe calor del ambiente y se evapora — ese aire frío es el que el ventilador expulsa hacia la habitación</li>
+    </ul>
+  </div>
+
+  <div class="lesson">
+    <h3><span class="tag">1.2</span> Fluidos Refrigerantes</h3>
+    <table>
+      <tr><th>Gas</th><th>Uso</th><th>Observación</th></tr>
+      <tr><td class="mono">R-410A</td><td>Splits residenciales (estándar actual)</td><td>No inflamable, presión más alta que el antiguo R-22</td></tr>
+      <tr><td class="mono">R-32</td><td>Splits más recientes, alta eficiencia</td><td>Levemente inflamable (clase A2L) — requiere herramienta compatible</td></tr>
+      <tr><td class="mono">R-22</td><td>Equipos antiguos (legado)</td><td>En fase de descontinuación, cada vez más difícil de conseguir</td></tr>
+    </table>
+    <div class="callout warn"><span class="label">Atención</span>Nunca mezcles gases refrigerantes diferentes en el mismo sistema, y siempre confirma el gas correcto en la etiqueta de la unidad externa antes de completar la carga.</div>
+  </div>
+
+  <div class="lesson">
+    <h3><span class="tag">1.3</span> Herramientas Esenciales</h3>
+    <div class="tool-grid">
+      <div class="tool-card"><div class="ic">🧰</div><span>Manifold (juego de mangueras)</span></div>
+      <div class="tool-card"><div class="ic">🌀</div><span>Bomba de vacío</span></div>
+      <div class="tool-card"><div class="ic">🔧</div><span>Abocardador + cortatubos</span></div>
+      <div class="tool-card"><div class="ic">⚡</div><span>Pinza amperimétrica</span></div>
+      <div class="tool-card"><div class="ic">📟</div><span>Multímetro</span></div>
+      <div class="tool-card"><div class="ic">🔍</div><span>Detector de fugas</span></div>
+      <div class="tool-card"><div class="ic">🪫</div><span>Báscula de carga de gas</span></div>
+      <div class="tool-card"><div class="ic">🥽</div><span>EPP (gafas, guantes)</span></div>
+      <div class="tool-card"><div class="ic">📏</div><span>Nivel y flexómetro</span></div>
+    </div>
+  </div>
+
+  <div class="lesson">
+    <h3><span class="tag">1.4</span> Seguridad en el Trabajo</h3>
+    <ul>
+      <li>Siempre apaga el interruptor (breaker) del circuito antes de tocar cualquier conexión eléctrica</li>
+      <li>Usa gafas de protección al manipular gas refrigerante — el contacto con la piel/ojos causa quemaduras por congelación</li>
+      <li>Trabaja en ambiente ventilado; el gas refrigerante en alta concentración desplaza el oxígeno del aire</li>
+      <li>Al trabajar en altura (pared externa), usa arnés de seguridad y asegura bien la escalera</li>
+      <li>Nunca sueldes tubería con gas todavía dentro del sistema — riesgo de explosión</li>
+    </ul>
+  </div>
+
+  <div class="lesson">
+    <h3><span class="tag">1.5</span> Diagnóstico Rápido — Síntoma × Causa Probable</h3>
+    <table>
+      <tr><th>Síntoma</th><th>Causa más probable</th></tr>
+      <tr><td>No enciende</td><td>Breaker apagado, control sin batería, tarjeta electrónica dañada</td></tr>
+      <tr><td>Enciende pero no enfría</td><td>Falta de gas (fuga), compresor dañado, filtro obstruido</td></tr>
+      <tr><td>Enfría poco</td><td>Suciedad en el serpentín/filtro, BTU insuficiente para el ambiente</td></tr>
+      <tr><td>Hielo en la unidad interna</td><td>Bajo flujo de aire (filtro sucio) o baja carga de gas</td></tr>
+      <tr><td>Gotea agua dentro de casa</td><td>Dreno obstruido o mal nivelado</td></tr>
+      <tr><td>Ruido en la unidad externa</td><td>Ventilador desalineado, soporte suelto, compresor al final de su vida útil</td></tr>
+    </table>
+  </div>
+
+  <div class="lesson">
+    <h3><span class="tag">1.6</span> Cómo Practicar Antes de Atender Clientes</h3>
+    <p>La teoría de este módulo te da el mapa — pero abocardar un tubo, soldar y leer el manifold en tiempo real son habilidades manuales que solo se afinan con repetición. Un plan realista antes de tu primer trabajo solo:</p>
+    <ol>
+      <li><strong>Consigue tramos de tubo de cobre usados o de descarte</strong> (chatarrería o taller local) y practica cortar, abocardar y soldar sin la presión de un cliente esperando</li>
+      <li><strong>Busca acompañar a un técnico con experiencia</strong> en 3-5 instalaciones reales, aunque sea sin cobrar — es la forma más rápida de calibrar lo que el libro no puede enseñar: sonido correcto del vacío, torque "a mano", lectura del manifold</li>
+      <li><strong>Empieza tus primeros trabajos pagos en instalaciones simples</strong> (distancia corta entre unidades, pared de fácil acceso) antes de aceptar casos complejos</li>
+      <li><strong>Ten el número de un técnico más experimentado</strong> a quien puedas llamar si algo no sale como se esperaba en tus primeros servicios</li>
+    </ol>
+    <div class="callout tip"><span class="label">Autoevaluación del módulo 1</span>
+      Antes de avanzar al Módulo 2, confirma que puedes: nombrar los 4 componentes del ciclo sin ver el diagrama · identificar qué gas usa un equipo por su etiqueta · listar las 9 herramientas esenciales · explicar en voz alta 3 reglas de seguridad. Si te falta alguna, vuelve a leer esa lección antes de seguir.
+    </div>
+  </div>
+</section>
+
+<!-- ===================== MÓDULO 2 ===================== -->
+<div id="modulo2"></div>
+<div class="module-head">
+  <div class="wrap">
+    <div class="num">MÓDULO 02</div>
+    <h2>Instalación del Split Hi-Wall</h2>
+    <p>El paso a paso completo de una instalación residencial, desde la planeación hasta la entrega funcionando al cliente.</p>
+  </div>
+</div>
+<section class="content">
+  <div class="lesson">
+    <h3><span class="tag">2.1</span> Cálculo de Carga Térmica (Dimensionamiento)</h3>
+    <p>Antes de vender o instalar, calcula el BTU necesario — equivocarse aquí genera cliente insatisfecho y retrabajo.</p>
+    <div class="formula">
+      BTU necesario = Área (m²) × 600<br>
+      <small>Fórmula rápida para ambientes con altura estándar (~2,7m), sin exposición solar extrema. Ajusta +15% para paredes/ventanas con mucho sol por la tarde, y +600 BTU por persona por encima de 2 ocupantes fijos.</small>
+    </div>
+    <table>
+      <tr><th>Área del ambiente</th><th>BTU recomendado</th></tr>
+      <tr><td>Hasta 12 m²</td><td>9.000 BTU</td></tr>
+      <tr><td>12 a 18 m²</td><td>12.000 BTU</td></tr>
+      <tr><td>18 a 24 m²</td><td>18.000 BTU</td></tr>
+      <tr><td>24 a 34 m²</td><td>22.000 BTU</td></tr>
+    </table>
+  </div>
+
+  <div class="lesson">
+    <h3><span class="tag">2.2</span> Planeación del Lugar</h3>
+    <ul>
+      <li>Unidad interna: pared alta, sin obstrucción al frente, alejada de fuentes de calor y sin apuntar directo a la cama/sofá</li>
+      <li>Unidad externa: lugar ventilado, protegido de sol directo excesivo y lluvia fuerte, con espacio mínimo de 15cm alrededor para disipar el calor</li>
+      <li>Distancia máxima entre unidades: normalmente hasta 15m (verifica el manual del fabricante — pasar de esto requiere gas adicional)</li>
+      <li>Desnivel entre unidades: idealmente la externa no debe quedar más de 5m arriba o abajo de la interna</li>
+    </ul>
+  </div>
+
+  <div class="lesson">
+    <h3><span class="tag">2.3</span> Vista General de la Instalación</h3>
+    <div class="diagram">
+      <svg viewBox="0 0 640 300" xmlns="http://www.w3.org/2000/svg">
+        <rect x="0" y="0" width="640" height="300" fill="#eef2f6"/>
+        <rect x="40" y="20" width="300" height="260" fill="#dbe3ea" stroke="#5c7a95" stroke-width="2"/>
+        <text x="190" y="45" text-anchor="middle" fill="#2f4a66" font-family="Inter" font-size="12" font-weight="700">AMBIENTE INTERNO</text>
+        <rect x="70" y="60" width="120" height="34" rx="4" fill="#122036"/>
+        <text x="130" y="82" text-anchor="middle" fill="#fff" font-family="Inter" font-size="11" font-weight="700">UNID. INTERNA</text>
+        <rect x="336" y="65" width="10" height="24" fill="#5c7a95"/>
+        <rect x="360" y="150" width="120" height="90" rx="6" fill="#122036"/>
+        <text x="420" y="190" text-anchor="middle" fill="#fff" font-family="Inter" font-size="11" font-weight="700">UNID.</text>
+        <text x="420" y="205" text-anchor="middle" fill="#fff" font-family="Inter" font-size="11" font-weight="700">EXTERNA</text>
+        <path d="M190,77 C 300,77 300,195 360,195" stroke="#e2761f" stroke-width="4" fill="none"/>
+        <text x="270" y="115" fill="#e2761f" font-family="Inter" font-size="10" font-weight="700">tubería (líquido + succión)</text>
+        <path d="M180,94 C 250,150 250,270 200,280" stroke="#5c7a95" stroke-width="3" fill="none" stroke-dasharray="4,3"/>
+        <text x="235" y="250" fill="#2f4a66" font-family="Inter" font-size="10">dreno</text>
+      </svg>
+      <p class="cap">Fig. 2 — Vista general: unidad interna y externa conectadas por la línea de tubería de cobre (líquido + succión, aisladas) y por el dreno, que necesita pendiente mínima para escurrir por gravedad.</p>
+    </div>
+  </div>
+
+  <div class="lesson">
+    <h3><span class="tag">2.4</span> Paso a Paso de la Instalación</h3>
+    <ol>
+      <li><strong>Marca y fija el soporte</strong> de la unidad interna nivelado, respetando distancia mínima del techo (~15cm)</li>
+      <li><strong>Haz el orificio en la pared</strong> con leve inclinación hacia afuera, para facilitar el escurrimiento del dreno</li>
+      <li><strong>Pasa la tubería</strong> (cobre aislado) y el cable de comunicación por el orificio</li>
+      <li><strong>Instala la unidad interna</strong> en el soporte y conecta la tubería con el torque correcto (usa torquímetro siempre que sea posible)</li>
+      <li><strong>Fija la unidad externa</strong> en soporte firme, nivelada, con espacio de ventilación</li>
+      <li><strong>Conecta la tubería</strong> a la unidad externa y realiza las conexiones eléctricas</li>
+      <li><strong>Haz vacío en el sistema</strong> (siguiente lección) antes de abrir el gas</li>
+      <li><strong>Prueba el funcionamiento</strong>: mide temperatura de salida del aire, corriente eléctrica y escucha ruidos anormales</li>
+    </ol>
+  </div>
+
+  <div class="lesson">
+    <h3><span class="tag">2.5</span> Abocardado y Conexión de Tubería (la parte que más falla en instalaciones nuevas)</h3>
+    <p>La mayoría de las fugas en instalaciones recientes no vienen de un mal cálculo — vienen de un abocardado mal hecho o una tuerca floja. Esta es la lección para leer más de una vez y practicar físicamente antes de tu primer trabajo pagado.</p>
+    <div class="diagram">
+      <svg viewBox="0 0 640 200" xmlns="http://www.w3.org/2000/svg">
+        <rect x="0" y="0" width="640" height="200" fill="#eef2f6"/>
+        <rect x="30" y="80" width="140" height="18" rx="4" fill="#5c7a95"/>
+        <text x="100" y="72" text-anchor="middle" fill="#2f4a66" font-family="Inter" font-size="11" font-weight="700">1. Corte perpendicular</text>
+        <rect x="220" y="75" width="140" height="28" rx="4" fill="#5c7a95"/>
+        <path d="M330,75 L360,60 L360,118 L330,103 Z" fill="#e2761f"/>
+        <text x="290" y="55" text-anchor="middle" fill="#7a2318" font-family="Inter" font-size="11" font-weight="700">2. Abocardado en 45°</text>
+        <rect x="420" y="75" width="130" height="28" rx="4" fill="#5c7a95"/>
+        <path d="M550,75 L580,60 L580,118 L550,103 Z" fill="#2f7d4f"/>
+        <rect x="575" y="55" width="16" height="70" rx="3" fill="#122036"/>
+        <text x="555" y="45" text-anchor="middle" fill="#1e5236" font-family="Inter" font-size="11" font-weight="700">3. Tuerca + torque</text>
+      </svg>
+      <p class="cap">Fig. 3 — El abocardado debe quedar liso, sin grietas ni marcas de la cuchilla, con el cono centrado — cualquier imperfección aquí es una fuga futura garantizada.</p>
+    </div>
+    <table>
+      <tr><th>Diámetro del tubo</th><th>Torque recomendado (referencia general)</th></tr>
+      <tr><td class="mono">1/4"</td><td>15-20 N·m</td></tr>
+      <tr><td class="mono">3/8"</td><td>33-42 N·m</td></tr>
+      <tr><td class="mono">1/2"</td><td>50-62 N·m</td></tr>
+      <tr><td class="mono">5/8"</td><td>63-77 N·m</td></tr>
+    </table>
+    <div class="callout warn"><span class="label">Atención</span>Estos valores son referencia general — siempre confirma el torque exacto en el manual del fabricante del equipo que estás instalando. Apretar de más agrieta el abocardado; apretar de menos deja fuga lenta que puede tardar meses en notarse.</div>
+    <ul>
+      <li>Aplica un poco de aceite refrigerante en la rosca antes de apretar — reduce fricción y evita que el torque real sea menor al medido</li>
+      <li>Nunca uses cinta teflón ni sellador en conexiones flare — el sistema depende del contacto metal con metal</li>
+      <li>Si vas a soldar (línea de succión de cobre a cobre), purga con nitrógeno mientras sueldas — sin esto, el calor forma óxido dentro del tubo que después circula y tapa el capilar</li>
+    </ul>
+  </div>
+
+  <div class="lesson">
+    <h3><span class="tag">2.6</span> Conexión Eléctrica</h3>
+    <p>La tensión de línea varía según el país — en algunas regiones de Latinoamérica es 110-127V, en otras 220-240V, y muchos splits usan 220V dedicado incluso en países con red de 110-127V. Antes de instalar, confirma siempre:</p>
+    <ul>
+      <li>La tensión indicada en la etiqueta del equipo (nunca asumas el estándar de tu país sin verificar)</li>
+      <li>Que el circuito tenga protección térmica/breaker dedicado y del amperaje correcto para el equipo</li>
+      <li>Que exista una buena conexión a tierra — es la protección más importante contra descargas y daño a la tarjeta electrónica</li>
+      <li>El calibre del cable adecuado a la distancia y a la corriente del equipo, según la norma eléctrica de tu país</li>
+    </ul>
+    <div class="callout warn"><span class="label">Atención</span>Nunca instales un split de 220V en un circuito de 110-127V, ni al revés — además de no funcionar, puede quemar el compresor o la tarjeta electrónica en el primer encendido.</div>
+  </div>
+
+  <div class="lesson">
+    <h3><span class="tag">2.7</span> Vacío y Carga de Gas</h3>
+    <p>Este es el paso más decisivo para la durabilidad del sistema. La humedad y el aire dentro de la tubería corroen el sistema por dentro y causan falla prematura del compresor.</p>
+    <div class="callout tip"><span class="label">Regla práctica</span>Haz vacío hasta un mínimo de 500 microns y mantenlo por 10-15 minutos sin que suba — esto garantiza que no hay fuga ni humedad residual antes de abrir el gas de la unidad externa.</div>
+    <ol>
+      <li>Conecta el manifold a las válvulas de servicio de la unidad externa</li>
+      <li>Enciende la bomba de vacío y haz vacío hasta llegar a 500 microns o menos</li>
+      <li>Cierra el registro y observa si la presión se mantiene estable (prueba de fuga)</li>
+      <li>Abre las válvulas de servicio de la unidad externa liberando el gas hacia el sistema</li>
+      <li>Confirma la presión de trabajo según la tabla del fabricante para el gas usado</li>
+    </ol>
+    <div class="diagram">
+      <svg viewBox="0 0 640 190" xmlns="http://www.w3.org/2000/svg">
+        <rect x="0" y="0" width="640" height="190" fill="#eef2f6"/>
+        <circle cx="160" cy="95" r="70" fill="#fff" stroke="#5c7a95" stroke-width="3"/>
+        <text x="160" y="45" text-anchor="middle" fill="#2f4a66" font-family="Inter" font-size="10" font-weight="700">BAJA (azul)</text>
+        <line x1="160" y1="95" x2="120" y2="60" stroke="#c23b2c" stroke-width="3"/>
+        <circle cx="160" cy="95" r="4" fill="#122036"/>
+        <circle cx="420" cy="95" r="70" fill="#fff" stroke="#5c7a95" stroke-width="3"/>
+        <text x="420" y="45" text-anchor="middle" fill="#7a2318" font-family="Inter" font-size="10" font-weight="700">ALTA (roja)</text>
+        <line x1="420" y1="95" x2="465" y2="55" stroke="#c23b2c" stroke-width="3"/>
+        <circle cx="420" cy="95" r="4" fill="#122036"/>
+        <text x="160" y="180" text-anchor="middle" fill="#4c5866" font-family="Inter" font-size="11">succión / vacío</text>
+        <text x="420" y="180" text-anchor="middle" fill="#4c5866" font-family="Inter" font-size="11">descarga / carga</text>
+      </svg>
+      <p class="cap">Fig. 4 — Lectura del manifold: la aguja azul (baja/succión) es la que sigues durante el vacío; la roja (alta/descarga) confirma la presión de trabajo una vez el sistema está cargado y en marcha. Si la aguja azul sube sola después de cerrado el registro, hay fuga — no continúes hasta encontrarla.</p>
+    </div>
+  </div>
+
+  <div class="lesson">
+    <h3><span class="tag">2.8</span> Checklist Final de Entrega</h3>
+    <ul class="checklist">
+      <li>Temperatura de salida del aire 8-12°C por debajo de la temperatura ambiente</li>
+      <li>Sin fuga visible de gas o agua en las conexiones</li>
+      <li>Dreno escurriendo correctamente (prueba con agua)</li>
+      <li>Corriente eléctrica dentro del rango de la etiqueta del equipo</li>
+      <li>Control remoto configurado y probado con el cliente</li>
+      <li>Aislamiento térmico completo en toda la tubería expuesta</li>
+      <li>Recomendaciones de mantenimiento básico entregadas al cliente</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===================== MÓDULO 3 ===================== -->
+<div id="modulo3"></div>
+<div class="module-head">
+  <div class="wrap">
+    <div class="num">MÓDULO 03</div>
+    <h2>Mantenimiento Preventivo y Correctivo</h2>
+    <p>Un cliente satisfecho se convierte en contrato de mantenimiento recurrente — la parte más rentable y predecible del negocio.</p>
+  </div>
+</div>
+<section class="content">
+  <div class="lesson">
+    <h3><span class="tag">3.1</span> Checklist de Mantenimiento Preventivo</h3>
+    <table>
+      <tr><th>Frecuencia</th><th>Qué hacer</th></tr>
+      <tr><td>Mensual (lo hace el cliente)</td><td>Limpieza del filtro de aire</td></tr>
+      <tr><td>Trimestral</td><td>Limpieza del serpentín interno, verificación del dreno</td></tr>
+      <tr><td>Semestral</td><td>Limpieza de la unidad externa, verificación de conexiones eléctricas</td></tr>
+      <tr><td>Anual</td><td>Medición de presión de gas, corriente eléctrica, revisión general</td></tr>
+    </table>
+  </div>
+
+  <div class="lesson">
+    <h3><span class="tag">3.2</span> Procedimiento de Limpieza</h3>
+    <ol>
+      <li>Apaga el breaker antes de cualquier limpieza</li>
+      <li>Retira y lava el filtro de aire con agua corriente (sin productos abrasivos)</li>
+      <li>Limpia el serpentín con espuma específica para aire acondicionado o agua + detergente neutro</li>
+      <li>Verifica el dreno con una jeringa de agua — debe escurrir sin represarse</li>
+      <li>En la unidad externa, retira hojas/suciedad de las aletas del condensador con cepillo suave</li>
+    </ol>
+  </div>
+
+  <div class="lesson">
+    <h3><span class="tag">3.3</span> Diagnóstico de Ruidos</h3>
+    <table>
+      <tr><th>Tipo de ruido</th><th>Causa probable</th></tr>
+      <tr><td>Silbido agudo constante</td><td>Posible fuga de gas en la tubería</td></tr>
+      <tr><td>Golpeteo metálico</td><td>Tornillo o pieza suelta dentro de la unidad externa</td></tr>
+      <tr><td>Zumbido grave</td><td>Compresor con desgaste o capacitor al final de su vida</td></tr>
+      <tr><td>Vibración en la pared</td><td>Soporte de la unidad interna o externa mal fijado</td></tr>
+    </table>
+  </div>
+
+  <div class="lesson">
+    <h3><span class="tag">3.4</span> Mantenimiento Correctivo — Casos Comunes</h3>
+    <div class="callout warn"><span class="label">Compresor no enciende</span>Verifica el capacitor de arranque, la tensión de alimentación y la protección térmica antes de considerar el compresor dañado — es la causa más barata de resolver y la más confundida con una falla grave.</div>
+    <div class="callout warn"><span class="label">Hielo acumulado en el serpentín interno</span>Casi siempre es bajo flujo de aire (filtro sucio, ventilador débil) o baja carga de gas — nunca enciendas el equipo congelado directo en modo frío, deja que se descongele primero.</div>
+  </div>
+</section>
+
+<!-- ===================== MÓDULO 4 (NEGOCIO) ===================== -->
+<div id="modulo4"></div>
+<div class="module-head">
+  <div class="wrap">
+    <div class="num">MÓDULO 04</div>
+    <h2>Emprendimiento y Gestión de Negocios</h2>
+    <p>Saber instalar es la mitad del camino — la otra mitad es cobrar bien, vender correctamente y convertirte en referente en tu zona.</p>
+  </div>
+</div>
+<section class="content">
+  <div class="lesson">
+    <h3><span class="tag">4.1</span> Formalizando el Negocio</h3>
+    <div class="callout warn"><span class="label">Verifica antes de cobrar por instalaciones</span>Además del régimen tributario, algunos países exigen certificación o carnet técnico específico para trabajar con gases refrigerantes (por manejo ambiental o de seguridad). Consulta con la autoridad ambiental o de trabajo de tu país antes de anunciarte como instalador profesional — evita problemas legales y te da un argumento de venta real frente a la competencia informal.</div>
+    <p>No necesitas una empresa grande para empezar — pero sí necesitas estar formalizado ante el fisco de tu país para poder facturar, comprar a proveedores con mejor precio y transmitir más confianza al cliente. Cada país tiene su propio régimen simplificado para trabajadores independientes o pequeños negocios (por ejemplo, monotributo, régimen simplificado, RIF o RESICO según el país) — infórmate en la entidad tributaria local sobre la opción más económica para empezar solo.</p>
+  </div>
+
+  <div class="lesson">
+    <h3><span class="tag">4.2</span> Fórmula de Precio</h3>
+    <div class="formula">
+      Precio del servicio = Costo directo + (Costo directo × Margen deseado) + Desplazamiento<br>
+      <small>Costo directo = mano de obra de tu tiempo + material consumido (soldadura, aislamiento, soporte). Margen recomendado para quien está empezando: 40-60%.</small>
+    </div>
+    <table>
+      <tr><th>Servicio</th><th>Rango de referencia (ajusta según tu región)</th></tr>
+      <tr><td>Instalación split hasta 12.000 BTU</td><td>1 a 1,5x el valor de un jornal de mano de obra local</td></tr>
+      <tr><td>Mantenimiento preventivo</td><td>0,3 a 0,5x el valor de una instalación</td></tr>
+      <tr><td>Visita técnica / diagnóstico</td><td>Cóbrala siempre, aunque la descuentes del presupuesto final si se aprueba</td></tr>
+    </table>
+  </div>
+
+  <div class="lesson">
+    <h3><span class="tag">4.3</span> Cómo Vender Sin Parecer Vendedor</h3>
+    <ul>
+      <li>Siempre muestra el problema antes de la solución: "esta suciedad en el serpentín es la razón por la que tu equipo enfría poco"</li>
+      <li>Ofrece el contrato de mantenimiento en el momento de la instalación — es mucho más fácil vender recurrencia cuando el cliente todavía está satisfecho con el servicio</li>
+      <li>Pide reseña/recomendación justo después del servicio, mientras la satisfacción está en su punto más alto</li>
+    </ul>
+  </div>
+
+  <div class="lesson">
+    <h3><span class="tag">4.4</span> Marketing Digital Básico</h3>
+    <ul>
+      <li>Graba un video corto del antes/después de cada instalación — es el contenido que más convierte en Instagram/TikTok local</li>
+      <li>Pide al cliente que grabe un testimonio de 15 segundos en el momento de la entrega</li>
+      <li>Usa grupos de WhatsApp/Facebook del barrio o la zona — la mayor parte de la demanda de instalador viene de recomendación local, no de anuncio pago al inicio</li>
+      <li>Cuando ya tengas 5-10 casos reales, ahí sí vale la pena invertir en anuncio pago mostrando esos casos</li>
+    </ul>
+  </div>
+
+  <div class="lesson">
+    <h3><span class="tag">4.5</span> Recurrencia: el Verdadero Negocio</h3>
+    <p>La instalación es una venta única. El mantenimiento es ingreso recurrente. Un cliente con contrato de mantenimiento semestral vale, a lo largo de 3 años, mucho más que una instalación aislada — y además te recomienda con vecinos y familiares. Prioriza cerrar el mantenimiento antes de salir de la casa del cliente el día de la instalación.</p>
+  </div>
+</section>
+
+<section class="content" style="background:var(--bg); padding-top:40px;">
+  <div class="lesson" style="border-bottom:none;">
+    <h3 style="margin-bottom:18px;">📖 Glosario Rápido</h3>
+    <table>
+      <tr><th>Término</th><th>Significado</th></tr>
+      <tr><td>BTU</td><td>Unidad de capacidad de enfriamiento del equipo</td></tr>
+      <tr><td>Microns</td><td>Unidad de medida de vacío — mientras más bajo el número, más "limpio" está el sistema de aire y humedad</td></tr>
+      <tr><td>Abocardado / flare</td><td>Forma cónica hecha en la punta del tubo de cobre para conectar con la tuerca</td></tr>
+      <tr><td>Refrigerante</td><td>Gas que circula dentro del sistema absorbiendo y liberando calor</td></tr>
+      <tr><td>Serpentín</td><td>Tubería enrollada por donde pasa el refrigerante dentro de cada unidad</td></tr>
+      <tr><td>Línea de succión / líquido</td><td>Los dos tubos que conectan unidad interna y externa — uno lleva gas frío de regreso, el otro líquido a presión</td></tr>
+      <tr><td>Capacitor de arranque</td><td>Componente que ayuda al compresor a encender — falla común y barata de reparar</td></tr>
+    </table>
+  </div>
+</section>
+
+<footer>
+  Instalador de Aire Acondicionado Split — De Cero a Profesional<br>
+  Material técnico de formación profesional en climatización
+</footer>
+
+</body>
+</html>

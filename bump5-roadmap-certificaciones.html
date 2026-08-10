@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Order Bump 5 — Roadmap de Certificaciones del Área</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#122036; --navy-deep:#0a1524; --orange:#e2761f; --orange-bright:#f5a24f;
+  --bg:#f2f4f2; --paper:#ffffff; --line:#dfe4e3; --text:#1b2430; --text-soft:#4c5866; --ok:#2f7d4f;
+}
+*{box-sizing:border-box; margin:0; padding:0;}
+body{font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); line-height:1.6;}
+h1,h2,h3{font-weight:800; color:var(--navy);}
+.wrap{max-width:760px; margin:0 auto; padding:0 24px;}
+.cover{background:linear-gradient(160deg, var(--navy) 0%, var(--navy-deep) 100%); color:#fff; padding:48px 24px 40px; text-align:center;}
+.cover .kicker{color:var(--orange-bright); font-size:0.75rem; letter-spacing:0.16em; text-transform:uppercase; font-weight:700; margin-bottom:12px;}
+.cover h1{color:#fff; font-size:clamp(1.5rem,4.2vw,2.1rem); line-height:1.2; margin-bottom:10px;}
+.cover p{color:rgba(255,255,255,0.75); font-size:0.96rem;}
+.badge-bump{display:inline-block; background:var(--orange); color:#241a08; font-weight:800; font-size:0.72rem; padding:5px 14px; border-radius:20px; margin-bottom:14px; letter-spacing:0.04em;}
+
+.path{max-width:760px; margin:0 auto; padding:36px 24px; position:relative;}
+.path::before{content:""; position:absolute; left:47px; top:20px; bottom:20px; width:2px; background:linear-gradient(180deg, var(--orange), var(--line));}
+.stage{display:flex; gap:20px; padding-bottom:34px; position:relative;}
+.stage .dot{flex:none; width:36px; height:36px; border-radius:50%; background:var(--navy); color:var(--orange-bright); display:flex; align-items:center; justify-content:center; font-weight:800; font-family:'IBM Plex Mono',monospace; font-size:0.9rem; z-index:1;}
+.stage .body{background:#fff; border:1px solid var(--line); border-radius:8px; padding:16px 18px; flex:1;}
+.stage .body h4{font-size:1rem; color:var(--navy); margin-bottom:6px;}
+.stage .body p{font-size:0.88rem; color:var(--text-soft); margin:0;}
+.stage .tag{display:inline-block; font-size:0.7rem; font-weight:700; padding:2px 9px; border-radius:10px; margin-top:8px;}
+.tag.basico{background:#eaf3ee; color:#1e5236;}
+.tag.medio{background:#fde8d2; color:#7a4a1a;}
+.tag.avanzado{background:#fdeeea; color:#7a2318;}
+
+section.content{background:var(--paper); padding:8px 24px 10px;}
+.lesson{max-width:760px; margin:0 auto; padding:28px 0; border-bottom:1px solid var(--line);}
+.lesson:last-child{border-bottom:none;}
+.lesson h3{font-size:1.15rem; margin-bottom:10px;}
+.lesson p{color:var(--text-soft); margin-bottom:8px;}
+table{width:100%; border-collapse:collapse; margin:14px 0; font-size:0.86rem;}
+th{background:var(--navy); color:#fff; text-align:left; padding:9px 11px; font-size:0.75rem; text-transform:uppercase;}
+td{padding:9px 11px; border-bottom:1px solid var(--line); color:var(--text-soft);}
+tr:nth-child(even) td{background:#f8f9f8;}
+.callout{border-radius:8px; padding:14px 16px; margin:14px 0; font-size:0.9rem; background:#eaf3ee; border-left:4px solid var(--ok); color:#1e5236;}
+.callout .label{font-weight:800; text-transform:uppercase; font-size:0.7rem; letter-spacing:0.06em; display:block; margin-bottom:4px;}
+footer{background:var(--navy-deep); color:rgba(255,255,255,0.45); text-align:center; padding:26px 24px; font-size:0.78rem;}
+</style>
+</head>
+<body>
+
+<section class="cover">
+  <div class="wrap">
+    <span class="badge-bump">⚡ ORDER BUMP</span>
+    <div class="kicker">Tu Próximo Nivel</div>
+    <h1>Roadmap de Certificaciones del Área</h1>
+    <p>Ya sabes instalar. Este es el mapa de qué certificaciones existen, en qué orden buscarlas, y cómo cada una abre un tipo de trabajo distinto.</p>
+  </div>
+</section>
+
+<div class="path">
+  <div class="stage">
+    <div class="dot">1</div>
+    <div class="body">
+      <h4>Manejo y Certificación de Refrigerantes</h4>
+      <p>En varios países es el primer paso formal — certifica que sabes manipular gases refrigerantes de forma segura y ambientalmente responsable. Suele ser exigido por regulación ambiental, no solo recomendado.</p>
+      <span class="tag basico">Básico · Primer paso</span>
+    </div>
+  </div>
+  <div class="stage">
+    <div class="dot">2</div>
+    <div class="body">
+      <h4>Certificación Técnica en Refrigeración y Climatización</h4>
+      <p>Formación técnica más estructurada (institutos técnicos o SENA/SENAI y equivalentes según el país) — valida conocimiento formal más allá de la experiencia práctica, y suele ser requisito para trabajar con empresas grandes o constructoras.</p>
+      <span class="tag basico">Básico-Intermedio</span>
+    </div>
+  </div>
+  <div class="stage">
+    <div class="dot">3</div>
+    <div class="body">
+      <h4>Certificación de Fabricante (marca específica)</h4>
+      <p>Daikin, LG, Samsung, Midea y otras marcas ofrecen certificaciones propias sobre sus equipos — te permite hacer instalaciones/mantenimientos que mantienen la garantía de fábrica válida, y muchas veces te vuelve "técnico autorizado" listado por la marca.</p>
+      <span class="tag medio">Intermedio</span>
+    </div>
+  </div>
+  <div class="stage">
+    <div class="dot">4</div>
+    <div class="body">
+      <h4>Especialización en Sistemas VRF/VRV y Climatización Comercial</h4>
+      <p>Abre la puerta a proyectos comerciales de mayor tamaño (oficinas, locales, edificios) — tickets mucho más altos que el residencial, pero exige entender sistemas multi-unidad.</p>
+      <span class="tag avanzado">Avanzado</span>
+    </div>
+  </div>
+  <div class="stage">
+    <div class="dot">5</div>
+    <div class="body">
+      <h4>Habilitación como Instalador Registrado / Responsable Técnico</h4>
+      <p>En varios países, para firmar proyectos más grandes o participar en licitaciones necesitas estar formalmente registrado ante un colegio técnico o entidad reguladora — es el nivel que te permite competir por contratos institucionales.</p>
+      <span class="tag avanzado">Avanzado</span>
+    </div>
+  </div>
+</div>
+
+<section class="content">
+  <div class="lesson">
+    <h3>Cómo elegir por dónde empezar</h3>
+    <table>
+      <tr><th>Tu objetivo</th><th>Prioriza</th></tr>
+      <tr><td>Trabajar de forma independiente, clientes residenciales</td><td>Etapas 1 y 2 — es suficiente para operar de forma legal y confiable</td></tr>
+      <tr><td>Ser contratado por una empresa instaladora</td><td>Etapas 1, 2 y 3 — las marcas prefieren técnicos certificados</td></tr>
+      <tr><td>Crecer hacia proyectos comerciales/empresariales</td><td>Etapas 3 y 4 — es donde está el ticket más alto</td></tr>
+      <tr><td>Construir una empresa propia de instalación a mediano plazo</td><td>Etapa 5 eventualmente, para poder licitar contratos más grandes</td></tr>
+    </table>
+  </div>
+  <div class="lesson">
+    <h3>Dónde buscar cada certificación</h3>
+    <p>La disponibilidad exacta varía por país — busca en tu localidad por: instituto técnico/SENA/SENAI (o equivalente nacional), distribuidor local de la marca de equipos que más instalas, y la cámara o asociación de técnicos en refrigeración de tu país (casi todos los países de la región tienen alguna).</p>
+    <div class="callout"><span class="label">Por qué esto importa para tu negocio, no solo tu currículum</span>Cada certificación es también un argumento de venta. "Técnico certificado por [marca]" en tu perfil de redes sociales o tarjeta genera más confianza que cualquier promesa de marketing — es prueba objetiva de que sabes lo que haces.</div>
+  </div>
+</section>
+
+<footer>Order Bump — Roadmap de Certificaciones del Área · Material complementario del curso Instalador Split</footer>
+</body>
+</html>

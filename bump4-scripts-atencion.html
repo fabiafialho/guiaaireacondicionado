@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Order Bump 4 — Kit de Scripts de Atención y Cobranza</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#122036; --navy-deep:#0a1524; --orange:#e2761f; --orange-bright:#f5a24f;
+  --bg:#f2f4f2; --paper:#ffffff; --line:#dfe4e3; --text:#1b2430; --text-soft:#4c5866; --ok:#2f7d4f;
+}
+*{box-sizing:border-box; margin:0; padding:0;}
+body{font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); line-height:1.6;}
+h1,h2,h3{font-weight:800; color:var(--navy);}
+.wrap{max-width:760px; margin:0 auto; padding:0 24px;}
+.cover{background:linear-gradient(160deg, var(--navy) 0%, var(--navy-deep) 100%); color:#fff; padding:48px 24px 40px; text-align:center;}
+.cover .kicker{color:var(--orange-bright); font-size:0.75rem; letter-spacing:0.16em; text-transform:uppercase; font-weight:700; margin-bottom:12px;}
+.cover h1{color:#fff; font-size:clamp(1.5rem,4.2vw,2.1rem); line-height:1.2; margin-bottom:10px;}
+.cover p{color:rgba(255,255,255,0.75); font-size:0.96rem;}
+.badge-bump{display:inline-block; background:var(--orange); color:#241a08; font-weight:800; font-size:0.72rem; padding:5px 14px; border-radius:20px; margin-bottom:14px; letter-spacing:0.04em;}
+
+section.content{background:var(--paper); padding:8px 24px 10px;}
+.cat{max-width:760px; margin:0 auto; padding:30px 0; border-bottom:1px solid var(--line);}
+.cat:last-child{border-bottom:none;}
+.cat h3{font-size:1.15rem; margin-bottom:6px;}
+.cat .desc{color:var(--text-soft); font-size:0.88rem; margin-bottom:16px;}
+.script{background:#f8f9f8; border-left:4px solid var(--orange); border-radius:0 8px 8px 0; padding:14px 18px; margin-bottom:12px; font-size:0.9rem; color:var(--text); position:relative;}
+.script .sit{font-size:0.72rem; font-weight:800; color:var(--orange); text-transform:uppercase; letter-spacing:0.04em; display:block; margin-bottom:6px;}
+footer{background:var(--navy-deep); color:rgba(255,255,255,0.45); text-align:center; padding:26px 24px; font-size:0.78rem;}
+</style>
+</head>
+<body>
+
+<section class="cover">
+  <div class="wrap">
+    <span class="badge-bump">⚡ ORDER BUMP</span>
+    <div class="kicker">Copiar y Pegar</div>
+    <h1>Kit de Scripts de Atención y Cobranza</h1>
+    <p>Mensajes listos para WhatsApp — para negociar, responder reclamos y cobrar sin perder al cliente ni tu tiempo pensando qué escribir.</p>
+  </div>
+</section>
+
+<section class="content">
+  <div class="cat">
+    <h3>💬 Primer contacto y presupuesto</h3>
+    <p class="desc">Para cuando un cliente nuevo pregunta precio por WhatsApp, antes de conocer el caso a fondo.</p>
+    <div class="script"><span class="sit">Respuesta inicial</span>¡Hola! Gracias por escribir. Para darte un precio justo necesito saber: ¿cuántos m² tiene el ambiente, ya tienes el equipo o necesitas que te recomiende uno, y hay acceso fácil para la unidad externa? Con esa info te envío el presupuesto hoy mismo.</div>
+    <div class="script"><span class="sit">Presupuesto enviado</span>Aquí está tu presupuesto: [valor]. Incluye instalación completa, materiales y garantía de [plazo] sobre la mano de obra. ¿Quieres que agendemos para esta semana?</div>
+  </div>
+
+  <div class="cat">
+    <h3>🤝 Negociación</h3>
+    <p class="desc">Para cuando el cliente pide descuento o compara con otro más barato.</p>
+    <div class="script"><span class="sit">Cliente pide descuento</span>Entiendo que el precio importa. Te comento que mi valor incluye [garantía, vacío hecho correctamente, materiales de calidad] — eso es justamente lo que evita que tengas que llamar a alguien de nuevo en 3 meses. Si el presupuesto es ajustado, puedo ver contigo qué parte del servicio ajustar sin afectar la calidad de la instalación.</div>
+    <div class="script"><span class="sit">Cliente compara con "más barato"</span>Totalmente válido comparar. Solo te sugiero confirmar si ese presupuesto incluye vacío del sistema con bomba (no solo purga rápida) y garantía por escrito — es donde más se recorta cuando el precio es muy bajo, y es justo lo que más te protege a largo plazo.</div>
+  </div>
+
+  <div class="cat">
+    <h3>📅 Confirmación y recordatorio</h3>
+    <div class="script"><span class="sit">Un día antes del servicio</span>¡Hola [nombre]! Te confirmo que mañana [fecha] a las [hora] estaré ahí para la instalación. Cualquier cambio de horario avísame con tiempo, ¡nos vemos!</div>
+    <div class="script"><span class="sit">Cliente no responde</span>Hola [nombre], ¿seguimos con la instalación programada para [fecha]? Quedo atento para confirmar tu horario.</div>
+  </div>
+
+  <div class="cat">
+    <h3>😠 Manejo de reclamos</h3>
+    <p class="desc">El tono aquí es clave: siempre reconoce primero, después investiga.</p>
+    <div class="script"><span class="sit">Cliente dice que "no enfría bien"</span>Gracias por avisarme, vamos a resolverlo. ¿Puedes decirme si empezó de repente o fue gradual, y si notaste algún ruido diferente? Con esa info ya puedo saber si es algo simple (filtro sucio) o si necesito ir a revisar.</div>
+    <div class="script"><span class="sit">Reclamo dentro del período de garantía</span>Está cubierto por la garantía del servicio, así que no tiene costo para ti. Puedo pasar [día/hora] a revisarlo, ¿te sirve ese horario?</div>
+    <div class="script"><span class="sit">Reclamo fuera de garantía o por mal uso</span>Reviso con gusto. Te comento que este caso específico [ej: variación eléctrica externa, falta de mantenimiento] queda fuera de la garantía de instalación, pero te paso el valor de la visita antes de ir, sin sorpresas.</div>
+  </div>
+
+  <div class="cat">
+    <h3>💰 Cobranza</h3>
+    <p class="desc">Directo pero respetuoso — protege la relación sin dejar de cobrar lo que es justo.</p>
+    <div class="script"><span class="sit">Recordatorio de pago pendiente</span>Hola [nombre], espero que el equipo esté funcionando perfecto. Te recuerdo que quedó pendiente el saldo de [valor] del servicio del [fecha]. ¿Podemos coordinar el pago esta semana?</div>
+    <div class="script"><span class="sit">Cliente se atrasó varias veces</span>Hola [nombre], entiendo que a veces se complica, solo necesito coordinar contigo una fecha concreta de pago para poder organizar también mi semana. ¿Qué día te funciona?</div>
+  </div>
+
+  <div class="cat">
+    <h3>🔁 Venta de mantenimiento recurrente</h3>
+    <div class="script"><span class="sit">Justo después de la instalación</span>Ya que el equipo quedó funcionando perfecto, te cuento que ofrezco un plan de mantenimiento cada [6 meses] por [valor] — esto evita que la suciedad reduzca el rendimiento y alarga la vida del equipo. ¿Te lo agendo desde ahora?</div>
+    <div class="script"><span class="sit">Cliente antiguo, sin contrato</span>Hola [nombre], ¿cómo va el aire que te instalé en [mes/año]? Ya pasó tiempo desde la última limpieza — ¿coordinamos un mantenimiento preventivo antes de que empiece el calor fuerte?</div>
+  </div>
+</section>
+
+<footer>Order Bump — Kit de Scripts de Atención y Cobranza · Material complementario del curso Instalador Split</footer>
+</body>
+</html>

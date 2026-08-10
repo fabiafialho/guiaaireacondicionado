@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Order Bump 2 — Contrato de Servicio + Garantía</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#122036; --navy-deep:#0a1524; --orange:#e2761f; --orange-bright:#f5a24f;
+  --bg:#f2f4f2; --paper:#ffffff; --line:#dfe4e3; --text:#1b2430; --text-soft:#4c5866; --ok:#2f7d4f;
+}
+*{box-sizing:border-box; margin:0; padding:0;}
+body{font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); line-height:1.6;}
+h1,h2,h3{font-weight:800; color:var(--navy);}
+.mono{font-family:'IBM Plex Mono',monospace;}
+.wrap{max-width:760px; margin:0 auto; padding:0 24px;}
+.cover{background:linear-gradient(160deg, var(--navy) 0%, var(--navy-deep) 100%); color:#fff; padding:48px 24px 40px; text-align:center;}
+.cover .kicker{color:var(--orange-bright); font-size:0.75rem; letter-spacing:0.16em; text-transform:uppercase; font-weight:700; margin-bottom:12px;}
+.cover h1{color:#fff; font-size:clamp(1.5rem,4.2vw,2.1rem); line-height:1.2; margin-bottom:10px;}
+.cover p{color:rgba(255,255,255,0.75); font-size:0.96rem;}
+.badge-bump{display:inline-block; background:var(--orange); color:#241a08; font-weight:800; font-size:0.72rem; padding:5px 14px; border-radius:20px; margin-bottom:14px; letter-spacing:0.04em;}
+
+section.content{background:var(--paper); padding:20px 24px 10px;}
+.lesson{max-width:760px; margin:0 auto; padding:24px 0; border-bottom:1px solid var(--line);}
+.lesson:last-child{border-bottom:none;}
+.lesson h3{font-size:1.15rem; margin-bottom:10px;}
+.lesson p{color:var(--text-soft); margin-bottom:8px;}
+.callout{border-radius:8px; padding:14px 16px; margin:14px 0; font-size:0.9rem; background:#eaf3ee; border-left:4px solid var(--ok); color:#1e5236;}
+.callout .label{font-weight:800; text-transform:uppercase; font-size:0.7rem; letter-spacing:0.06em; display:block; margin-bottom:4px;}
+
+.doc{background:#fff; max-width:760px; margin:0 auto; padding:40px 36px; border:1px solid var(--line); box-shadow:0 4px 18px rgba(10,21,36,0.06);}
+.doc h2{text-align:center; font-size:1.3rem; margin-bottom:6px; color:var(--navy);}
+.doc .sub{text-align:center; color:var(--text-soft); font-size:0.85rem; margin-bottom:28px;}
+.doc .fillin{background:var(--orange-pale, #fde8d2); color:var(--navy); padding:1px 6px; border-radius:3px; font-family:'IBM Plex Mono',monospace; font-size:0.88em;}
+.doc h4{font-size:0.95rem; color:var(--navy); margin:22px 0 8px; border-bottom:2px solid var(--orange); display:inline-block; padding-bottom:2px;}
+.doc p{font-size:0.9rem; color:var(--text-soft); margin-bottom:8px; line-height:1.7;}
+.doc ol{margin:0 0 8px 20px; color:var(--text-soft); font-size:0.9rem;}
+.sign-row{display:flex; justify-content:space-between; margin-top:50px; gap:30px;}
+.sign-box{flex:1; text-align:center; border-top:1px solid var(--text); padding-top:8px; font-size:0.82rem; color:var(--text-soft);}
+footer{background:var(--navy-deep); color:rgba(255,255,255,0.45); text-align:center; padding:26px 24px; font-size:0.78rem;}
+</style>
+</head>
+<body>
+
+<section class="cover">
+  <div class="wrap">
+    <span class="badge-bump">⚡ ORDER BUMP</span>
+    <div class="kicker">Documento Listo para Usar</div>
+    <h1>Contrato de Servicio + Término de Garantía</h1>
+    <p>Cópialo, llena los datos entre corchetes y ya tienes un documento profesional que protege tanto a ti como al cliente.</p>
+  </div>
+</section>
+
+<section class="content">
+  <div class="lesson">
+    <h3>Por qué esto vale más de lo que parece</h3>
+    <p>Un instalador informal entrega el servicio de palabra. Un profesional entrega un papel firmado. Este simple gesto justifica un precio más alto y reduce drásticamente los reclamos y desacuerdos después del servicio.</p>
+    <div class="callout"><span class="label">Cómo usar</span>Copia el texto de abajo a un documento de Word o Google Docs, reemplaza todo lo que está entre corchetes con tus datos, e imprime dos copias — una para ti, una para el cliente.</div>
+  </div>
+</section>
+
+<div class="doc">
+  <h2>CONTRATO DE PRESTACIÓN DE SERVICIO TÉCNICO</h2>
+  <p class="sub">Instalación / Mantenimiento de Aire Acondicionado</p>
+
+  <h4>1. Partes</h4>
+  <p><strong>Prestador del servicio:</strong> <span class="fillin">[tu nombre completo o razón social]</span>, identificado con <span class="fillin">[número de identificación / RFC / RUT / CUIT]</span>, con domicilio en <span class="fillin">[dirección]</span>, en adelante "el Técnico".</p>
+  <p><strong>Cliente:</strong> <span class="fillin">[nombre completo del cliente]</span>, identificado con <span class="fillin">[número de identificación]</span>, con domicilio en <span class="fillin">[dirección del servicio]</span>, en adelante "el Cliente".</p>
+
+  <h4>2. Objeto del Contrato</h4>
+  <p>El Técnico se compromete a realizar el siguiente servicio: <span class="fillin">[instalación de equipo split / mantenimiento preventivo / diagnóstico y reparación]</span>, en el equipo marca <span class="fillin">[marca]</span>, modelo <span class="fillin">[modelo]</span>, capacidad <span class="fillin">[BTU]</span>.</p>
+
+  <h4>3. Valor y Forma de Pago</h4>
+  <p>El valor total del servicio es de <span class="fillin">[monto]</span>, a pagar de la siguiente forma: <span class="fillin">[% al confirmar + % al finalizar, o pago único al finalizar]</span>.</p>
+
+  <h4>4. Plazo de Ejecución</h4>
+  <p>El servicio se realizará el día <span class="fillin">[fecha]</span>, con una duración estimada de <span class="fillin">[horas]</span>. Cualquier cambio de fecha debe acordarse con al menos <span class="fillin">[24/48 horas]</span> de anticipación.</p>
+
+  <h4>5. Garantía del Servicio</h4>
+  <ol>
+    <li>El Técnico garantiza la mano de obra del servicio realizado por un período de <span class="fillin">[90 días / 6 meses / 1 año]</span> a partir de la fecha de entrega.</li>
+    <li>Esta garantía cubre defectos derivados directamente de la instalación (conexiones, soldaduras, vacío, carga de gas) — no cubre daños por mal uso, variación de tensión eléctrica externa, ni desgaste natural del equipo.</li>
+    <li>La garantía de fábrica del equipo (piezas y compresor) es responsabilidad del fabricante/distribuidor, según su propia póliza.</li>
+    <li>Para hacer válida la garantía, el Cliente debe informar el problema dentro de las 48 horas de notado, evitando manipulación del equipo por terceros.</li>
+  </ol>
+
+  <h4>6. Responsabilidades del Cliente</h4>
+  <ol>
+    <li>Garantizar acceso seguro al lugar de instalación en la fecha acordada</li>
+    <li>Informar cualquier condición eléctrica o estructural relevante que conozca previamente</li>
+    <li>Realizar el mantenimiento básico recomendado (limpieza de filtro) para mantener válida la garantía</li>
+  </ol>
+
+  <h4>7. Cláusula de Cancelación</h4>
+  <p>En caso de cancelación por parte del Cliente con menos de <span class="fillin">[24 horas]</span> de anticipación, se podrá cobrar <span class="fillin">[% o monto]</span> como compensación por el tiempo reservado.</p>
+
+  <div class="sign-row">
+    <div class="sign-box">Firma del Técnico<br><span class="fillin">[nombre]</span></div>
+    <div class="sign-box">Firma del Cliente<br><span class="fillin">[nombre]</span></div>
+  </div>
+  <p style="text-align:center; margin-top:24px; font-size:0.82rem;">Lugar y fecha: <span class="fillin">[ciudad, fecha]</span></p>
+</div>
+
+<section class="content">
+  <div class="lesson">
+    <h3>Recomendaciones antes de usarlo</h3>
+    <p>Este modelo es un punto de partida general y no sustituye asesoría legal específica de tu país. Si vas a usarlo de forma recurrente en tu negocio, vale la pena que un abogado local lo revise una sola vez — el costo se diluye rápido si evita un solo conflicto con un cliente.</p>
+  </div>
+</section>
+
+<footer>Order Bump — Contrato de Servicio + Garantía · Material complementario del curso Instalador Split</footer>
+</body>
+</html>

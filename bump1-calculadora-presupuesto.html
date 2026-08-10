@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Order Bump 1 — Calculadora de Presupuesto Automático</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#122036; --navy-deep:#0a1524; --steel:#2f4a66; --steel-light:#5c7a95;
+  --orange:#e2761f; --orange-bright:#f5a24f; --orange-pale:#fde8d2;
+  --bg:#f2f4f2; --paper:#ffffff; --line:#dfe4e3;
+  --text:#1b2430; --text-soft:#4c5866; --danger:#c23b2c; --ok:#2f7d4f;
+}
+*{box-sizing:border-box; margin:0; padding:0;}
+body{font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); line-height:1.6;}
+h1,h2,h3{font-weight:800; color:var(--navy);}
+.mono{font-family:'IBM Plex Mono',monospace;}
+.wrap{max-width:760px; margin:0 auto; padding:0 24px;}
+.cover{background:linear-gradient(160deg, var(--navy) 0%, var(--navy-deep) 100%); color:#fff; padding:48px 24px 40px; text-align:center;}
+.cover .kicker{color:var(--orange-bright); font-size:0.75rem; letter-spacing:0.16em; text-transform:uppercase; font-weight:700; margin-bottom:12px;}
+.cover h1{color:#fff; font-size:clamp(1.5rem,4.2vw,2.1rem); line-height:1.2; margin-bottom:10px;}
+.cover p{color:rgba(255,255,255,0.75); font-size:0.96rem;}
+.badge-bump{display:inline-block; background:var(--orange); color:#241a08; font-weight:800; font-size:0.72rem; padding:5px 14px; border-radius:20px; margin-bottom:14px; letter-spacing:0.04em;}
+
+.calc-card{background:var(--paper); max-width:760px; margin:-24px auto 0; border-radius:12px; box-shadow:0 20px 50px rgba(10,21,36,0.15); padding:32px 28px; position:relative;}
+.field{margin-bottom:18px;}
+.field label{display:block; font-size:0.85rem; font-weight:700; color:var(--navy); margin-bottom:6px;}
+.field input, .field select{width:100%; padding:11px 14px; border:1px solid var(--line); border-radius:6px; font-family:'Inter',sans-serif; font-size:0.95rem; color:var(--text); background:#f8f9f8;}
+.field input:focus, .field select:focus{outline:none; border-color:var(--orange);}
+.row2{display:grid; grid-template-columns:1fr 1fr; gap:16px;}
+.result{background:var(--navy-deep); color:#fff; border-radius:10px; padding:24px; margin-top:24px; text-align:center;}
+.result .lbl{font-size:0.8rem; color:rgba(255,255,255,0.6); text-transform:uppercase; letter-spacing:0.05em; margin-bottom:6px;}
+.result .val{font-family:'IBM Plex Mono',monospace; font-size:2.1rem; font-weight:700; color:var(--orange-bright);}
+.result .breakdown{margin-top:16px; text-align:left; font-size:0.85rem; color:rgba(255,255,255,0.75); border-top:1px solid rgba(255,255,255,0.15); padding-top:14px;}
+.result .breakdown div{display:flex; justify-content:space-between; padding:4px 0;}
+.btn-calc{width:100%; background:linear-gradient(180deg,var(--orange-bright),var(--orange)); color:#241a08; font-weight:800; padding:14px; border:none; border-radius:8px; font-size:1rem; cursor:pointer; margin-top:6px;}
+.btn-calc:hover{filter:brightness(1.05);}
+
+section.content{background:var(--paper); padding:8px 24px 40px;}
+.lesson{max-width:760px; margin:0 auto; padding:28px 0; border-bottom:1px solid var(--line);}
+.lesson:last-child{border-bottom:none;}
+.lesson h3{font-size:1.2rem; margin-bottom:12px;}
+.lesson p{color:var(--text-soft); margin-bottom:10px;}
+.callout{border-radius:8px; padding:14px 16px; margin:14px 0; font-size:0.9rem;}
+.callout.tip{background:#eaf3ee; border-left:4px solid var(--ok); color:#1e5236;}
+.callout .label{font-weight:800; text-transform:uppercase; font-size:0.7rem; letter-spacing:0.06em; display:block; margin-bottom:4px;}
+footer{background:var(--navy-deep); color:rgba(255,255,255,0.45); text-align:center; padding:26px 24px; font-size:0.78rem;}
+</style>
+</head>
+<body>
+
+<section class="cover">
+  <div class="wrap">
+    <span class="badge-bump">⚡ ORDER BUMP</span>
+    <div class="kicker">Herramienta Lista para Usar</div>
+    <h1>Calculadora de Presupuesto Automático</h1>
+    <p>Ingresa los datos del servicio y obtén el precio sugerido en segundos — sin adivinar, sin cobrar de menos.</p>
+  </div>
+</section>
+
+<div class="calc-card">
+  <div class="row2">
+    <div class="field">
+      <label>Tipo de servicio</label>
+      <select id="tipo">
+        <option value="1">Instalación completa</option>
+        <option value="0.4">Mantenimiento preventivo</option>
+        <option value="0.15">Visita técnica / diagnóstico</option>
+      </select>
+    </div>
+    <div class="field">
+      <label>Capacidad del equipo (BTU)</label>
+      <select id="btu">
+        <option value="9000">9.000 BTU</option>
+        <option value="12000" selected>12.000 BTU</option>
+        <option value="18000">18.000 BTU</option>
+        <option value="22000">22.000 BTU</option>
+      </select>
+    </div>
+  </div>
+  <div class="row2">
+    <div class="field">
+      <label>Valor de tu jornal / hora de trabajo</label>
+      <input type="number" id="jornal" value="40" min="0">
+    </div>
+    <div class="field">
+      <label>Costo de material estimado</label>
+      <input type="number" id="material" value="25" min="0">
+    </div>
+  </div>
+  <div class="row2">
+    <div class="field">
+      <label>Margen de ganancia (%)</label>
+      <input type="number" id="margen" value="50" min="0" max="200">
+    </div>
+    <div class="field">
+      <label>Costo de desplazamiento</label>
+      <input type="number" id="desplazamiento" value="5" min="0">
+    </div>
+  </div>
+  <button class="btn-calc" onclick="calcular()">Calcular presupuesto</button>
+
+  <div class="result" id="resultado" style="display:none;">
+    <div class="lbl">Precio sugerido del servicio</div>
+    <div class="val" id="valTotal">$0</div>
+    <div class="breakdown" id="breakdown"></div>
+  </div>
+</div>
+
+<section class="content">
+  <div class="lesson">
+    <h3>Cómo usar esta calculadora</h3>
+    <p>Está pensada para que la uses frente al cliente o justo antes de enviar el presupuesto por WhatsApp. Ingresa tu costo real (no el de otro técnico), porque el margen correcto depende de tu propio costo de vida y de mercado local.</p>
+    <div class="callout tip"><span class="label">Consejo</span>Ajusta el multiplicador de BTU según tu experiencia: instalaciones de mayor capacidad suelen tomar más tiempo y material, así que no cobres lo mismo por un 9.000 BTU que por un 22.000 BTU aunque el "tipo de servicio" sea igual.</div>
+  </div>
+  <div class="lesson">
+    <h3>La lógica detrás del cálculo</h3>
+    <p class="mono" style="background:#f8f9f8; padding:14px; border-radius:6px; font-size:0.85rem;">Precio = (Jornal × factor de servicio × factor BTU) + Material + Desplazamiento, todo multiplicado por (1 + Margen/100)</p>
+    <p>Esta es exactamente la misma fórmula del Módulo 4 del curso principal — aquí solo la automatizamos para que no tengas que hacer la cuenta a mano cada vez.</p>
+  </div>
+</section>
+
+<footer>Order Bump — Calculadora de Presupuesto Automático · Material complementario del curso Instalador Split</footer>
+
+<script>
+function calcular(){
+  const tipo = parseFloat(document.getElementById('tipo').value);
+  const btu = parseFloat(document.getElementById('btu').value);
+  const jornal = parseFloat(document.getElementById('jornal').value) || 0;
+  const material = parseFloat(document.getElementById('material').value) || 0;
+  const margen = parseFloat(document.getElementById('margen').value) || 0;
+  const desplazamiento = parseFloat(document.getElementById('desplazamiento').value) || 0;
+
+  const factorBtu = btu <= 9000 ? 1 : btu <= 12000 ? 1.15 : btu <= 18000 ? 1.35 : 1.6;
+  const manoDeObra = jornal * tipo * factorBtu;
+  const costoDirecto = manoDeObra + material + desplazamiento;
+  const total = costoDirecto * (1 + margen/100);
+
+  document.getElementById('valTotal').textContent = '$' + total.toFixed(2);
+  document.getElementById('breakdown').innerHTML =
+    '<div><span>Mano de obra (ajustada por BTU)</span><span>$' + manoDeObra.toFixed(2) + '</span></div>' +
+    '<div><span>Material</span><span>$' + material.toFixed(2) + '</span></div>' +
+    '<div><span>Desplazamiento</span><span>$' + desplazamiento.toFixed(2) + '</span></div>' +
+    '<div><span>Margen aplicado</span><span>' + margen + '%</span></div>';
+  document.getElementById('resultado').style.display = 'block';
+}
+</script>
+
+</body>
+</html>

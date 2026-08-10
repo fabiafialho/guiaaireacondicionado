@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Order Bump 3 — Manual de Bolsillo: Tu Primer Servicio en 1 Día</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#122036; --navy-deep:#0a1524; --orange:#e2761f; --orange-bright:#f5a24f;
+  --bg:#f2f4f2; --paper:#ffffff; --line:#dfe4e3; --text:#1b2430; --text-soft:#4c5866; --danger:#c23b2c; --ok:#2f7d4f;
+}
+*{box-sizing:border-box; margin:0; padding:0;}
+body{font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); line-height:1.6;}
+h1,h2,h3{font-weight:800; color:var(--navy);}
+.mono{font-family:'IBM Plex Mono',monospace;}
+.wrap{max-width:700px; margin:0 auto; padding:0 24px;}
+.cover{background:linear-gradient(160deg, var(--navy) 0%, var(--navy-deep) 100%); color:#fff; padding:48px 24px 40px; text-align:center;}
+.cover .kicker{color:var(--orange-bright); font-size:0.75rem; letter-spacing:0.16em; text-transform:uppercase; font-weight:700; margin-bottom:12px;}
+.cover h1{color:#fff; font-size:clamp(1.5rem,4.2vw,2.1rem); line-height:1.2; margin-bottom:10px;}
+.cover p{color:rgba(255,255,255,0.75); font-size:0.96rem;}
+.badge-bump{display:inline-block; background:var(--orange); color:#241a08; font-weight:800; font-size:0.72rem; padding:5px 14px; border-radius:20px; margin-bottom:14px; letter-spacing:0.04em;}
+
+.timeline{max-width:700px; margin:0 auto; padding:30px 24px;}
+.step{display:flex; gap:16px; padding:18px 0; border-bottom:1px solid var(--line);}
+.step:last-child{border-bottom:none;}
+.step .time{flex:none; width:70px; font-family:'IBM Plex Mono',monospace; color:var(--orange); font-weight:700; font-size:0.85rem; padding-top:2px;}
+.step .body h4{font-size:1rem; color:var(--navy); margin-bottom:5px;}
+.step .body p{font-size:0.88rem; color:var(--text-soft); margin:0;}
+
+.callout{border-radius:8px; padding:14px 16px; margin:16px 24px; max-width:700px; margin-left:auto; margin-right:auto; font-size:0.9rem;}
+.callout.warn{background:#fdeeea; border-left:4px solid var(--danger); color:#7a2318;}
+.callout .label{font-weight:800; text-transform:uppercase; font-size:0.7rem; letter-spacing:0.06em; display:block; margin-bottom:4px;}
+
+.quickcard{background:var(--navy); color:#fff; max-width:700px; margin:20px auto; border-radius:10px; padding:24px;}
+.quickcard h4{color:var(--orange-bright); font-size:0.95rem; margin-bottom:12px;}
+.quickcard ul{margin:0 0 0 18px; font-size:0.88rem; color:rgba(255,255,255,0.85);}
+.quickcard li{margin-bottom:6px;}
+
+footer{background:var(--navy-deep); color:rgba(255,255,255,0.45); text-align:center; padding:26px 24px; font-size:0.78rem;}
+</style>
+</head>
+<body>
+
+<section class="cover">
+  <div class="wrap">
+    <span class="badge-bump">⚡ ORDER BUMP</span>
+    <div class="kicker">Guía de Acción Rápida</div>
+    <h1>Manual de Bolsillo: Tu Primer Servicio en 1 Día</h1>
+    <p>La versión ultra-resumida de la instalación completa — para llevar impresa o en el celular el día de tu primer trabajo, sin tener que releer todo el curso.</p>
+  </div>
+</section>
+
+<div class="timeline">
+  <div class="step">
+    <div class="time">ANTES</div>
+    <div class="body"><h4>Confirma con el cliente</h4><p>BTU del equipo, tensión eléctrica del lugar (110-127V o 220V) y distancia estimada entre unidad interna y externa. Lleva siempre repuesto de aislamiento y abrazaderas extra.</p></div>
+  </div>
+  <div class="step">
+    <div class="time">0:00</div>
+    <div class="body"><h4>Verifica el punto eléctrico</h4><p>Confirma breaker dedicado y tierra antes de instalar nada — si no hay, avisa al cliente primero, no lo resuelvas sobre la marcha.</p></div>
+  </div>
+  <div class="step">
+    <div class="time">0:15</div>
+    <div class="body"><h4>Marca y fija el soporte interno</h4><p>Nivelado, con distancia mínima al techo. Este paso mal hecho arruina toda la instalación después.</p></div>
+  </div>
+  <div class="step">
+    <div class="time">0:30</div>
+    <div class="body"><h4>Haz el orificio y pasa tubería</h4><p>Leve inclinación hacia afuera para el dreno. Protege el interior de la casa mientras perforas.</p></div>
+  </div>
+  <div class="step">
+    <div class="time">1:00</div>
+    <div class="body"><h4>Instala unidad interna y abocarda</h4><p>Conexión limpia, sin grietas. Aplica un poco de aceite refrigerante en la rosca antes de apretar.</p></div>
+  </div>
+  <div class="step">
+    <div class="time">1:30</div>
+    <div class="body"><h4>Fija e instala la unidad externa</h4><p>Nivelada, con espacio de ventilación mínimo de 15cm alrededor.</p></div>
+  </div>
+  <div class="step">
+    <div class="time">2:00</div>
+    <div class="body"><h4>Vacío del sistema</h4><p>Mínimo 500 microns, sostenido 10-15 min sin subir. No te saltes este paso por ahorrar tiempo — es la causa #1 de reclamos futuros.</p></div>
+  </div>
+  <div class="step">
+    <div class="time">2:20</div>
+    <div class="body"><h4>Abre el gas y conecta eléctrico</h4><p>Confirma polaridad del cable de comunicación antes de energizar.</p></div>
+  </div>
+  <div class="step">
+    <div class="time">2:35</div>
+    <div class="body"><h4>Prueba de funcionamiento</h4><p>Mide diferencial de temperatura (8-12°C), corriente eléctrica, y escucha ruidos anormales por 5 minutos completos antes de dar por terminado.</p></div>
+  </div>
+  <div class="step">
+    <div class="time">2:50</div>
+    <div class="body"><h4>Checklist final con el cliente</h4><p>Muestra el equipo funcionando, explica el control remoto, y aprovecha este momento — cliente satisfecho en el momento es el mejor momento para ofrecer el contrato de mantenimiento.</p></div>
+  </div>
+</div>
+
+<div class="callout warn"><span class="label">Si algo no sale como esperabas</span>No fuerces ni improvises en el sistema de gas o eléctrico. Detente, revisa el Módulo correspondiente del curso principal con calma, o llama a un técnico más experimentado — un servicio que toma un poco más de tiempo es mucho mejor que uno mal terminado.</div>
+
+<div class="quickcard">
+  <h4>🎒 Checklist de lo que llevar en el primer servicio</h4>
+  <ul>
+    <li>Manifold, bomba de vacío, abocardador, cortatubos</li>
+    <li>Pinza amperimétrica y multímetro</li>
+    <li>Nivel, flexómetro, taladro con brocas para concreto</li>
+    <li>Aislamiento térmico y abrazaderas de repuesto</li>
+    <li>Cable eléctrico de calibre adecuado (por si el existente no sirve)</li>
+    <li>Copia impresa del contrato de servicio (Order Bump 2)</li>
+  </ul>
+</div>
+
+<footer>Order Bump — Manual de Bolsillo: Tu Primer Servicio en 1 Día · Material complementario del curso Instalador Split</footer>
+</body>
+</html>
